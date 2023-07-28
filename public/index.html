@@ -18,20 +18,26 @@
     />
   </head>
   <body>
+    <!-- LOADING SCREEN -->
     <div
-      class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-screen transition-opacity opacity-100 loader-container bg-mainCol"
+      class="relative flex flex-col justify-center h-screen gap-16 opacity-100 trans4tion-opacity loader-container bg-mainCol"
     >
-      <h1 class="text-4xl font-bold text-accentCol">IDE Tandil</h1>
+      <img class="mx-auto w-72" src="img/logo-ide.png" alt="" />
+      <img class="mx-auto opacity-75 w-36" src="img/logo_municipio.png" alt="" />
+
+      ><img class="absolute inset-x-0 w-12 mx-auto bottom-10 "
+      src="img/tail-spin.svg" alt=""/>
     </div>
 
-    <div class="opacity-0 content-container">
+    <!-- RESPONSIVE MENU BAR -->
+    <div id="menu-responsive" class="hidden opacity-0 content-container">
       <div class="flex justify-end w-full bg-mainCol">
         <button
           data-drawer-target="default-sidebar"
           data-drawer-toggle="default-sidebar"
           aria-controls="default-sidebar"
           type="button"
-          class="p-3 text-sm text-secCol sm:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="p-3 text-sm text-secCol md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         >
           <span class="sr-only">Open sidebar</span>
           <svg
@@ -52,12 +58,10 @@
 
       <aside
         id="default-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 bg-mainCol"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full md:hidden md:translate-x-0 bg-mainCol"
         aria-label="Sidebar"
       >
-        <div
-          class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"
-        >
+        <div class="h-full px-3 py-4 bg-gray-50 dark:bg-gray-800">
           <ul class="space-y-2 font-medium">
             <li>
               <a
@@ -95,7 +99,7 @@
         </div>
       </aside>
 
-      <section id="carousel" class="bg-secCol">
+      <section id="carousel" class="hidden bg-secCol">
         <div
           id="default-carousel"
           class="relative w-full"
@@ -213,16 +217,20 @@
 
     <script src="flowbite.min.js"></script>
 
-    <script>
+        <script>
       window.addEventListener("load", function () {
         setTimeout(function () {
           const loaderContainer = document.querySelector(".loader-container");
           const contentContainer = document.querySelector(".content-container");
+          const menuResp = document.querySelector("#menu-responsive");
+          const carousel = document.querySelector("#carousel");
 
           loaderContainer.style.opacity = "0";
           setTimeout(function () {
             loaderContainer.classList.add("hidden");
             contentContainer.classList.toggle("block");
+            menuResp.classList.toggle("hidden");
+            carousel.classList.toggle("hidden");
             contentContainer.style.opacity = "1";
           }, 500);
         }, 1000);
