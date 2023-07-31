@@ -23,15 +23,23 @@
       class="relative flex flex-col justify-center h-screen gap-16 opacity-100 trans4tion-opacity loader-container bg-mainCol"
     >
       <img class="mx-auto w-72" src="img/logo-ide.png" alt="" />
-      <img class="mx-auto opacity-75 w-36" src="img/logo_municipio.png" alt="" />
+      <img
+        class="mx-auto opacity-75 w-36"
+        src="img/logo_municipio.png"
+        alt=""
+      />
 
-      ><img class="absolute inset-x-0 w-12 mx-auto bottom-10 "
-      src="img/tail-spin.svg" alt=""/>
+      ><img
+        class="absolute inset-x-0 w-12 mx-auto bottom-10"
+        src="img/tail-spin.svg"
+        alt=""
+      />
     </div>
 
     <!-- RESPONSIVE MENU BAR -->
     <div id="menu-responsive" class="hidden opacity-0 content-container">
-      <div class="flex justify-end w-full bg-mainCol">
+      <div class="flex justify-between w-full bg-mainCol md:hidden">
+        <img class="pl-2 my-auto h-7" src="img/logo_ide2.png" alt="">
         <button
           data-drawer-target="default-sidebar"
           data-drawer-toggle="default-sidebar"
@@ -55,7 +63,7 @@
           </svg>
         </button>
       </div>
-
+      <!-- ASIDE BAR -->
       <aside
         id="default-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full md:hidden md:translate-x-0 bg-mainCol"
@@ -66,7 +74,7 @@
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 rounded-lg text-mainCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <span class="ml-3">Principal</span>
               </a>
@@ -74,7 +82,7 @@
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 rounded-lg text-mainCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <span class="ml-3">Nosotros</span>
               </a>
@@ -82,7 +90,7 @@
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 rounded-lg text-mainCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <span class="ml-3">Contactanos</span>
               </a>
@@ -90,7 +98,7 @@
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 rounded-lg text-mainCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <span class="ml-3">Recursos</span>
               </a>
@@ -98,15 +106,17 @@
           </ul>
         </div>
       </aside>
-
-      <section id="carousel" class="hidden bg-secCol">
+      <!-- HERO -->
+      <section class="hidden h-screen bg-bottom bg-cover lg:block bg-mainCol/50"  style="background-image: url(img/background.png);"></section>
+      <!-- CAROUSEL -->
+      <section id="carousel" class="hidden">
         <div
           id="default-carousel"
           class="relative w-full"
           data-carousel="slide"
         >
           <!-- Carousel wrapper -->
-          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          <div class="relative h-64 overflow-hidden md:h-96">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img
@@ -114,6 +124,12 @@
                 class="absolute block object-cover h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
               />
+              <div
+                class="absolute inset-x-0 text-center bottom-7 text-secCol md:block bg-footerCol/40"
+              >
+                <h5 class="text-xl font-semibold">Título</h5>
+                <p>Esto es lo que dice la primer slide</p>
+              </div>
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -122,6 +138,12 @@
                 class="absolute block object-cover h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
               />
+              <div
+                class="absolute inset-x-0 text-center text-secCol bottom-7 md:block bg-footerCol/40"
+              >
+                <h5 class="text-xl font-semibold">Título</h5>
+                <p>Esto es lo que dice la segunda slide</p>
+              </div>
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -130,11 +152,17 @@
                 class="absolute block object-cover h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
               />
+              <div
+                class="absolute inset-x-0 text-center text-secCol bottom-7 md:block bg-footerCol/40"
+              >
+                <h5 class="text-xl font-semibold">Título</h5>
+                <p>Esto es lo que dice la tercera slide</p>
+              </div>
             </div>
           </div>
           <!-- Slider indicators -->
           <div
-            class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2"
+            class="absolute bottom-0 z-30 flex justify-center w-full py-2 space-x-3 -translate-x-1/2 left-1/2 bg-footerCol/40"
           >
             <button
               type="button"
@@ -161,7 +189,7 @@
           <!-- Slider controls -->
           <button
             type="button"
-            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none md:bg-footerCol/25"
             data-carousel-prev
           >
             <span
@@ -187,7 +215,7 @@
           </button>
           <button
             type="button"
-            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none md:bg-footerCol/25"
             data-carousel-next
           >
             <span
@@ -213,11 +241,15 @@
           </button>
         </div>
       </section>
+      <!-- FOOTER -->
+      <footer class="py-4 text-sm text-center bg-footerCol text-secCol">
+        © 2023 Todos los derechos reservados. Municipio de Tandil.
+      </footer>
     </div>
 
     <script src="flowbite.min.js"></script>
 
-        <script>
+    <script>
       window.addEventListener("load", function () {
         setTimeout(function () {
           const loaderContainer = document.querySelector(".loader-container");

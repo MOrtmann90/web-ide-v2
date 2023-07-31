@@ -8,7 +8,8 @@ module.exports = {
       current: "currentColor",
       mainCol: "#102531",
       secCol: "#eaeaea",
-      accentCol: "#2b8f88"
+      accentCol: "#2b8f88",
+      footerCol: "#272727"
     }
   },
   plugins: [require("flowbite/plugin")]
