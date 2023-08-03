@@ -16,6 +16,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <!-- LOADING SCREEN -->
@@ -116,20 +128,18 @@
           <div class="mb-8">
             <p class="text-xl font-light">Te damos la bienvenida a la</p>
             <h1
-              class="my-auto text-4xl font-bold leading-none md:text-5xl lg:text-6xl"
+              class="my-3 text-3xl font-bold uppercase md:text-5xl lg:text-6xl"
             >
               Infraestructura de Datos Espaciales
             </h1>
-            <p class="text-xl font-light leading-loose">
-              del Municipio de Tandil
-            </p>
+            <p class="text-xl font-light">del Municipio de Tandil</p>
           </div>
 
           <div
             class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
           >
             <a
-              href="#"
+              href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard"
               class="inline-flex items-center justify-center w-3/5 px-5 py-3 mx-auto text-base font-medium text-center border rounded-lg border-mainCol/60 text-secCol hover:bg-mainCol"
             >
               Navegar el mapa
@@ -278,7 +288,7 @@
       <section
         class="grid grid-cols-2 grid-rows-2 py-5 h-80 place-items-center"
       >
-        <a href="" class="links">
+        <a href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard" class="links">
           <figure>
             <img class="image" src="img/icon1.png" alt="" />
             <figcaption class="lg:uppercase">Visualizador</figcaption>
@@ -306,7 +316,7 @@
       <!-- CONTACT -->
       <section
         id="contact"
-        class="p-5 text-center bg-mainCol text-secCol h-3/5"
+        class="px-5 py-8 text-center bg-mainCol text-secCol "
       >
         <div class="flex flex-col justify-between">
           <h2 class="text-xl font-bold">CONTACTO</h2>
@@ -314,17 +324,17 @@
             Alguna consulta técnica? Alguna recomendación o detalle para
             mejorar? Escribinos!
           </p>
-          <a class="links text-accentCol" href="mailto:ide@tandil.gov.ar"
+          <a class="font-medium links text-accentCol" href="mailto:ide@tandil.gov.ar"
             ><i class="mr-2 fa-solid fa-envelope"></i>ide@tandil.gov.ar</a
           >
           <a
-            class="links text-accentCol"
+            class="font-medium links text-accentCol"
             href="https://goo.gl/maps/abL3JqonMU3iAZTc7"
             target="_blank"
             ><i class="mr-2 fa-solid fa-location-dot"></i>Belgrano 485</a
           >
         </div>
-        <hr class="w-3/5 mx-auto my-5">
+        <hr class="w-3/5 mx-auto my-8" />
         <div class="px-4 bg-mainCol text-secCol">
           <h3 class="mb-5 font-semibold">LINKS DE INTERÉS</h3>
           <ul class="font-light">
@@ -341,8 +351,6 @@
           </ul>
         </div>
       </section>
-      <!-- LINKS -->
-      <section></section>
       <!-- FOOTER -->
       <footer class="py-4 text-sm text-center bg-footerCol text-secCol">
         © 2023 Todos los derechos reservados. Municipio de Tandil.
