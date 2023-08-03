@@ -20,7 +20,7 @@
   <body>
     <!-- LOADING SCREEN -->
     <div
-      class="relative flex flex-col justify-center h-screen gap-16 opacity-100 trans4tion-opacity loader-container bg-mainCol"
+      class="relative flex flex-col justify-center h-[100dvh] gap-16 opacity-100 trans4tion-opacity loader-container bg-mainCol"
     >
       <img class="mx-auto w-72" src="img/logo-ide.png" alt="" />
       <img
@@ -39,7 +39,7 @@
     <!-- RESPONSIVE MENU BAR -->
     <div id="menu-responsive" class="hidden opacity-0 content-container">
       <div class="flex justify-between w-full bg-mainCol md:hidden">
-        <img class="pl-2 my-auto h-7" src="img/logo_ide2.png" alt="">
+        <img class="pl-2 my-auto h-7" src="img/logo_ide2.png" alt="" />
         <button
           data-drawer-target="default-sidebar"
           data-drawer-toggle="default-sidebar"
@@ -89,7 +89,7 @@
             </li>
             <li>
               <a
-                href="#"
+                href="#contact"
                 class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <span class="ml-3">Contactanos</span>
@@ -107,9 +107,42 @@
         </div>
       </aside>
       <!-- HERO -->
-      <section class="hidden h-screen bg-bottom bg-cover lg:block bg-mainCol/50"  style="background-image: url(img/background.png);"></section>
+      <header
+        class="bg-white relative bg-[url('img/banner-tandil.png')] bg-cover"
+      >
+        <div
+          class="relative z-10 max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 text-secCol"
+        >
+          <div class="mb-8">
+            <p class="text-xl font-light">Te damos la bienvenida a la</p>
+            <h1
+              class="my-auto text-4xl font-bold leading-none md:text-5xl lg:text-6xl"
+            >
+              Infraestructura de Datos Espaciales
+            </h1>
+            <p class="text-xl font-light leading-loose">
+              del Municipio de Tandil
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+          >
+            <a
+              href="#"
+              class="inline-flex items-center justify-center w-3/5 px-5 py-3 mx-auto text-base font-medium text-center border rounded-lg border-mainCol/60 text-secCol hover:bg-mainCol"
+            >
+              Navegar el mapa
+            </a>
+          </div>
+        </div>
+        <div
+          class="absolute top-0 left-0 z-0 w-full h-full opacity-75 bg-gradient-to-b from-mainCol to-accentCol"
+        ></div>
+      </header>
+
       <!-- CAROUSEL -->
-      <section id="carousel" class="hidden">
+      <section id="carousel" class="hidden lg:block">
         <div
           id="default-carousel"
           class="relative w-full"
@@ -241,6 +274,75 @@
           </button>
         </div>
       </section>
+      <!-- MAIN -->
+      <section
+        class="grid grid-cols-2 grid-rows-2 py-5 h-80 place-items-center"
+      >
+        <a href="" class="links">
+          <figure>
+            <img class="image" src="img/icon1.png" alt="" />
+            <figcaption class="lg:uppercase">Visualizador</figcaption>
+          </figure>
+        </a>
+        <a href="" class="links">
+          <figure>
+            <img class="image" src="img/icon2.png" alt="" />
+            <figcaption class="lg:uppercase">Mapas temáticos</figcaption>
+          </figure>
+        </a>
+        <a href="" class="links">
+          <figure>
+            <img class="image" src="img/icon3.png" alt="" />
+            <figcaption class="lg:uppercase">Geoservicios</figcaption>
+          </figure>
+        </a>
+        <a href="" class="links">
+          <figure>
+            <img class="image" src="img/icon4.png" alt="" />
+            <figcaption class="lg:uppercase">Catálogo de metadatos</figcaption>
+          </figure>
+        </a>
+      </section>
+      <!-- CONTACT -->
+      <section
+        id="contact"
+        class="p-5 text-center bg-mainCol text-secCol h-3/5"
+      >
+        <div class="flex flex-col justify-between">
+          <h2 class="text-xl font-bold">CONTACTO</h2>
+          <p class="mb-5 font-light text-gray-300">
+            Alguna consulta técnica? Alguna recomendación o detalle para
+            mejorar? Escribinos!
+          </p>
+          <a class="links text-accentCol" href="mailto:ide@tandil.gov.ar"
+            ><i class="mr-2 fa-solid fa-envelope"></i>ide@tandil.gov.ar</a
+          >
+          <a
+            class="links text-accentCol"
+            href="https://goo.gl/maps/abL3JqonMU3iAZTc7"
+            target="_blank"
+            ><i class="mr-2 fa-solid fa-location-dot"></i>Belgrano 485</a
+          >
+        </div>
+        <hr class="w-3/5 mx-auto my-5">
+        <div class="px-4 bg-mainCol text-secCol">
+          <h3 class="mb-5 font-semibold">LINKS DE INTERÉS</h3>
+          <ul class="font-light">
+            <li class="links">
+              <a href="https://www.tandil.gov.ar/" target="_blank"
+                >Municipio de Tandil</a
+              >
+            </li>
+            <li class="text-gray-300 links">Dirección de Estadística Local</li>
+            <li class="text-gray-300 links">
+              Plataforma de Indicadores Locales - PIL
+            </li>
+            <li class="text-gray-300 links">Boletines estadísticos</li>
+          </ul>
+        </div>
+      </section>
+      <!-- LINKS -->
+      <section></section>
       <!-- FOOTER -->
       <footer class="py-4 text-sm text-center bg-footerCol text-secCol">
         © 2023 Todos los derechos reservados. Municipio de Tandil.
@@ -262,7 +364,7 @@
             loaderContainer.classList.add("hidden");
             contentContainer.classList.toggle("block");
             menuResp.classList.toggle("hidden");
-            carousel.classList.toggle("hidden");
+            //carousel.classList.toggle("hidden");
             contentContainer.style.opacity = "1";
           }, 500);
         }, 1000);
