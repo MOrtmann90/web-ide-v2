@@ -7,7 +7,19 @@
     @apply my-0.5 cursor-pointer hover:opacity-75;
   }
 
+  .cards {
+    @apply text-center border-gray-700 rounded-lg lg:w-64 lg:mx-auto lg:p-3 lg:font-bold lg:border lg:bg-secCol;
+  }
+
   .image {
-    @apply w-16 mx-auto;
+    @apply w-16 mx-auto my-3;
+  }
+
+  .card-text {
+    @apply hidden w-4/5 mx-auto font-normal text-center lg:flex;
+  }
+
+  .text-separator {
+    @apply hidden w-4/5 mx-auto my-3 border-accentCol lg:block;
   }
 }
