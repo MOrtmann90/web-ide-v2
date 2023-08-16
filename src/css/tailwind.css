@@ -8,7 +8,7 @@
   }
 
   .cards {
-    @apply text-center border-gray-700 rounded-lg  hover:-translate-y-3 lg:w-full lg:mx-auto lg:px-4 lg:py-6 lg:font-bold lg:border lg:bg-gray-100 hover:transition-all ease-out duration-700 shadow-[0_6px_9px_0px_rgba(0,0,0,0.5)];
+    @apply text-center border-gray-700 rounded-lg  hover:-translate-y-3 lg:w-full lg:mx-auto lg:px-4 lg:py-6 lg:font-bold lg:border lg:bg-gray-100 hover:transition-all ease-out duration-1000 shadow-[0_6px_9px_0px_rgba(0,0,0,0.5)];
   }
 
   .image {
@@ -21,5 +21,9 @@
 
   .text-separator {
     @apply hidden w-4/5 mx-auto my-3 border-accentCol lg:block;
+  }
+
+  .cards-icon {
+    @apply block m-auto text-5xl text-white;
   }
 }
