@@ -11,12 +11,24 @@
     @apply text-center border-gray-700 rounded-lg  hover:-translate-y-3 lg:w-full lg:mx-auto lg:px-4 lg:py-6 lg:font-bold lg:border lg:bg-gray-100 hover:transition-all ease-out duration-700 shadow-[0_6px_9px_0px_rgba(0,0,0,0.5)];
   }
 
+  .cards {
+    @apply text-center border-gray-700 rounded-lg lg:w-64 lg:mx-auto lg:p-3 lg:font-bold lg:border lg:bg-secCol;
+  }
+
   .image {
+<<<<<<< HEAD
     @apply w-16 mx-auto my-3 ;
   }
 
   .card-text {
     @apply hidden mx-auto font-normal text-center lg:flex;
+=======
+    @apply w-16 mx-auto my-3;
+  }
+
+  .card-text {
+    @apply hidden w-4/5 mx-auto font-normal text-center lg:flex;
+>>>>>>> 117922e4705cb6804d2aa9ac945130bbcb8c1075
   }
 
   .text-separator {
