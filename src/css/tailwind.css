@@ -4,10 +4,22 @@
 
 @layer components {
   .links {
-    @apply my-0.5 cursor-pointer hover:opacity-75;
+    @apply my-0.5 cursor-pointer hover:opacity-75 transition-all duration-700 ease-out hover:scale-110;
+  }
+
+  .cards {
+    @apply text-center border-gray-700 rounded-lg  hover:-translate-y-3 lg:w-full lg:mx-auto lg:px-4 lg:py-6 lg:font-bold lg:border lg:bg-gray-100 hover:transition-all ease-out duration-700 shadow-[0_6px_9px_0px_rgba(0,0,0,0.5)];
   }
 
   .image {
-    @apply w-16 mx-auto;
+    @apply w-16 mx-auto my-3 ;
+  }
+
+  .card-text {
+    @apply hidden mx-auto font-normal text-center lg:flex;
+  }
+
+  .text-separator {
+    @apply hidden w-4/5 mx-auto my-3 border-accentCol lg:block;
   }
 }

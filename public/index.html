@@ -53,9 +53,9 @@
       <div class="flex justify-between w-full bg-mainCol md:hidden">
         <img class="pl-2 my-auto h-7" src="img/logo_ide2.png" alt="" />
         <button
-          data-drawer-target="default-sidebar"
-          data-drawer-toggle="default-sidebar"
-          aria-controls="default-sidebar"
+          data-drawer-target="sidebar"
+          data-drawer-toggle="sidebar"
+          aria-controls="sidebar"
           type="button"
           class="p-3 text-sm text-secCol md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         >
@@ -77,7 +77,7 @@
       </div>
       <!-- ASIDE BAR -->
       <aside
-        id="default-sidebar"
+        id="sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full md:hidden md:translate-x-0 bg-mainCol"
         aria-label="Sidebar"
       >
@@ -120,12 +120,12 @@
       </aside>
       <!-- HERO -->
       <header
-        class="bg-white relative bg-[url('img/banner-tandil.png')] bg-cover"
+        class="bg-white relative bg-[url('img/banner-tandil-rs.png')] bg-cover"
       >
         <div
-          class="relative z-10 max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 text-secCol"
+          class="relative z-10 max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 text-secCol md:max-w-[800px]"
         >
-          <div class="mb-8">
+          <div class="px-5 mb-8">
             <p class="text-xl font-light">Te damos la bienvenida a la</p>
             <h1
               class="my-3 text-3xl font-bold uppercase md:text-5xl lg:text-6xl"
@@ -136,11 +136,11 @@
           </div>
 
           <div
-            class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+            class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 lg:hidden"
           >
             <a
               href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard"
-              class="inline-flex items-center justify-center w-3/5 px-5 py-3 mx-auto text-base font-medium text-center border rounded-lg border-mainCol/60 text-secCol hover:bg-mainCol"
+              class="inline-flex items-center justify-center w-3/5 px-5 py-3 mx-auto text-base font-medium text-center border rounded-lg border-mainCol/60 text-secCol hover:bg-mainCol hover:outline outline-mainCol outline-offset-2 outline-1"
             >
               Navegar el mapa
             </a>
@@ -152,7 +152,9 @@
       </header>
 
       <!-- CAROUSEL -->
-      <section id="carousel" class="hidden lg:block">
+      <section id="carousel" class="hidden">
+        <!--lg:block-->
+
         <div
           id="default-carousel"
           class="relative w-full"
@@ -285,10 +287,14 @@
         </div>
       </section>
       <!-- MAIN -->
+      <!-- Mobile -->
       <section
-        class="grid grid-cols-2 grid-rows-2 py-5 h-80 place-items-center"
+        class="grid w-3/4 grid-cols-2 grid-rows-2 gap-5 mx-auto my-6 place-items-center lg:hidden"
       >
-        <a href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard" class="links">
+        <a
+          href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard"
+          class="links"
+        >
           <figure>
             <img class="image" src="img/icon1.png" alt="" />
             <figcaption class="lg:uppercase">Visualizador</figcaption>
@@ -313,10 +319,68 @@
           </figure>
         </a>
       </section>
+      <!-- Desktop -->
+      <section class="relative hidden w-full lg:block h-80">
+
+        <div class="absolute -top-10 left-0 right-0 flex gap-8 mx-8 card-container xl:mx-auto xl:max-w-[1100px]">
+
+
+          <a
+            href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard"
+            class=" cards"
+          >
+            <figure>
+              <img class="image" src="img/icon1.png" alt="" />
+              <figcaption class="lg:uppercase">Visualizador</figcaption>
+            </figure>
+            <hr class="text-separator" />
+            <p class="card-text">
+              Visualizador de capas de Información Geográfica. Datos abiertos
+              que se producen en el Municipio y organismos afines.
+            </p>
+          </a>
+          <a href="" class="cards">
+            <figure>
+              <img class="image" src="img/icon2.png" alt="" />
+              <figcaption class="lg:uppercase">Mapas temáticos</figcaption>
+            </figure>
+            <hr class="text-separator" />
+            <p class="card-text">
+              Mapas temáticos interactivos. Permiten la consulta de datos sobre
+              temáticas de interés particulares.
+            </p>
+          </a>
+          <a href="" class="cards">
+            <figure>
+              <img class="image" src="img/icon3.png" alt="" />
+              <figcaption class="lg:uppercase">Geoservicios</figcaption>
+            </figure>
+            <hr class="text-separator" />
+            <p class="card-text">
+              Servicio de búsqueda de información geoespacial en base a
+              metadatos.
+            </p>
+          </a>
+          <a href="" class="cards">
+            <figure>
+              <img class="image" src="img/icon4.png" alt="" />
+              <figcaption class="lg:uppercase">
+                Catálogo de metadatos
+              </figcaption>
+            </figure>
+            <hr class="text-separator" />
+            <p class="card-text">
+              Servicio de búsqueda de información geoespacial en base a
+              metadatos.
+            </p>
+          </a>
+        </div>
+      </section>
+
       <!-- CONTACT -->
       <section
         id="contact"
-        class="px-5 py-8 text-center bg-mainCol text-secCol "
+        class="flex flex-col px-5 py-8 text-center bg-mainCol text-secCol"
       >
         <div class="flex flex-col justify-between">
           <h2 class="text-xl font-bold">CONTACTO</h2>
@@ -324,7 +388,9 @@
             Alguna consulta técnica? Alguna recomendación o detalle para
             mejorar? Escribinos!
           </p>
-          <a class="font-medium links text-accentCol" href="mailto:ide@tandil.gov.ar"
+          <a
+            class="font-medium links text-accentCol"
+            href="mailto:ide@tandil.gov.ar"
             ><i class="mr-2 fa-solid fa-envelope"></i>ide@tandil.gov.ar</a
           >
           <a
@@ -343,17 +409,35 @@
                 >Municipio de Tandil</a
               >
             </li>
-            <li class="text-gray-300 links">Dirección de Estadística Local</li>
             <li class="text-gray-300 links">
-              Plataforma de Indicadores Locales - PIL
+              <a
+                href="http://cipres.tandil.gov.ar/estadistica-local/index.html"
+                target="_blank"
+                >Dirección de Estadística Local</a
+              >
             </li>
-            <li class="text-gray-300 links">Boletines estadísticos</li>
+            <li class="text-gray-300 links">
+              <a
+                href="http://indicadores.tandil.gov.ar/indicadoresmt/web/index.php/index"
+                target="_blank"
+                >Plataforma de Indicadores Locales - PIL</a
+              >
+            </li>
+            <li class="text-gray-300 links">
+              <a
+                href="http://cipres.tandil.gov.ar/estadistica-local/boletines.html"
+                target="_blank"
+                >Boletines estadísticos</a
+              >
+            </li>
           </ul>
         </div>
       </section>
       <!-- FOOTER -->
       <footer class="py-4 text-sm text-center bg-footerCol text-secCol">
-        © 2023 Todos los derechos reservados. Municipio de Tandil.
+        <p class="w-3/5 mx-auto">
+          © 2023 Todos los derechos reservados. Municipio de Tandil.
+        </p>
       </footer>
     </div>
 
