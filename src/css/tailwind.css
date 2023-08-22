@@ -23,7 +23,11 @@
     @apply hidden w-4/5 mx-auto my-3 border-accentCol lg:block;
   }
 
+  .circ-container {
+    @apply flex flex-col items-center transition duration-300 ease-in-out delay-150 cursor-pointer hover:scale-110;
+  }
+
   .cards-icon {
-    @apply block m-auto text-5xl text-white;
+    @apply block text-5xl text-white;
   }
 }
