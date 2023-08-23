@@ -1,58 +1,37 @@
-const items = [
-  {
-    position: 0,
-    el: document.getElementById("carousel-item-1")
-  },
-  {
-    position: 1,
-    el: document.getElementById("carousel-item-2")
-  },
-  {
-    position: 2,
-    el: document.getElementById("carousel-item-3")
-  },
-  {
-    position: 3,
-    el: document.getElementById("carousel-item-4")
-  }
-];
+// Loader
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    const loaderContainer = document.querySelector(".loader-container");
+    const contentContainer = document.querySelector(".content-container");
+    const menuResp = document.querySelector("#menu-responsive");
 
-const options = {
-  defaultPosition: 1,
-  interval: 3000,
+    loaderContainer.style.opacity = "0";
+    setTimeout(function () {
+      loaderContainer.classList.add("hidden");
+      contentContainer.classList.toggle("block");
+      menuResp.classList.toggle("hidden");
+      contentContainer.style.opacity = "1";
+    }, 500);
+  }, 1000);
+});
 
-  indicators: {
-    activeClasses: "bg-white dark:bg-gray-800",
-    inactiveClasses:
-      "bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800",
-    items: [
-      {
-        position: 0,
-        el: document.getElementById("carousel-indicator-1")
-      },
-      {
-        position: 1,
-        el: document.getElementById("carousel-indicator-2")
-      },
-      {
-        position: 2,
-        el: document.getElementById("carousel-indicator-3")
-      },
-      {
-        position: 3,
-        el: document.getElementById("carousel-indicator-4")
-      }
-    ]
-  },
+// NOSOTROS
+var nosotrosBtn = document.getElementById("us-btn");
+var nosotrosSection = document.getElementById("nosotros");
+var nosotrosCloseBtn = document.getElementById("us-close-btn");
+var nosotrosMobileBtn = document.getElementById("us-mobile-btn");
 
-  // callback functions
-  onNext: () => {
-    console.log("next slider item is shown");
-  },
-  onPrev: () => {
-    console.log("previous slider item is shown");
-  },
-  onChange: () => {
-    console.log("new slider item has been shown");
-  }
-};
+// Desktop
+nosotrosBtn.addEventListener("click", function () {
+  nosotrosSection.classList.toggle("hidden");
+});
+
+// Mobile
+nosotrosMobileBtn.addEventListener("click", function () {
+  nosotrosSection.classList.toggle("hidden");
+});
+
+// Close btn
+nosotrosCloseBtn.addEventListener("click", function () {
+  nosotrosSection.classList.toggle("hidden");
+});

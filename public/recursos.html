@@ -190,153 +190,60 @@
       </header>
 
       <!-- MAIN -->
-      <!-- Mobile -->
-      <section
-        class="grid w-3/4 grid-cols-2 grid-rows-2 gap-5 mx-auto my-6 place-items-center lg:hidden"
-      >
-        <a
-          href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard"
-          class="links"
-        >
-          <figure>
-            <img class="image" src="img/icon1.png" alt="" />
-            <figcaption class="text-center lg:uppercase">
-              Visualizador
-            </figcaption>
-          </figure>
-        </a>
-        <a href="" class="links">
-          <figure>
-            <img class="image" src="img/icon2.png" alt="" />
-            <figcaption class="text-center lg:uppercase">
-              Mapas temáticos
-            </figcaption>
-          </figure>
-        </a>
-        <a href="" class="links">
-          <figure>
-            <img class="image" src="img/icon3.png" alt="" />
-            <figcaption class="text-center lg:uppercase">
-              Geoservicios
-            </figcaption>
-          </figure>
-        </a>
-        <a href="" class="links">
-          <figure>
-            <img class="image" src="img/icon4.png" alt="" />
-            <figcaption class="text-center lg:uppercase">
-              Catálogo de metadatos
-            </figcaption>
-          </figure>
-        </a>
-      </section>
-      <!-- Desktop -->
-      <section class="relative hidden w-full lg:block h-80">
-        <div
-          class="absolute -top-10 left-0 right-0 flex gap-8 mx-8 card-container xl:mx-auto xl:max-w-[1100px]"
-        >
-          <a
-            href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard"
-            class="cards"
-          >
-            <figure>
-              <img class="image" src="img/icon1.png" alt="" />
-              <figcaption class="lg:uppercase">Visualizador</figcaption>
-            </figure>
-            <hr class="text-separator" />
-            <p class="card-text">
-              Visualizador de capas de Información Geográfica. Datos abiertos
-              que se producen en el Municipio y organismos afines.
-            </p>
-          </a>
-          <a href="" class="cards">
-            <figure>
-              <img class="image" src="img/icon2.png" alt="" />
-              <figcaption class="lg:uppercase">Mapas temáticos</figcaption>
-            </figure>
-            <hr class="text-separator" />
-            <p class="card-text">
-              Mapas temáticos interactivos. Permiten la consulta de datos sobre
-              temáticas de interés particulares.
-            </p>
-          </a>
-          <a href="" class="cards">
-            <figure>
-              <img class="image" src="img/icon3.png" alt="" />
-              <figcaption class="lg:uppercase">Geoservicios</figcaption>
-            </figure>
-            <hr class="text-separator" />
-            <p class="card-text">
-              Servicios WMS y WFS publicados desde la Infraestructura de Datos
-              Espaciales para la conexión con Sistemas de Información
-              Geográfica.
-            </p>
-          </a>
-          <a href="" class="cards">
-            <figure>
-              <img class="image" src="img/icon4.png" alt="" />
-              <figcaption class="lg:uppercase">
-                Catálogo de metadatos
-              </figcaption>
-            </figure>
-            <hr class="text-separator" />
-            <p class="card-text">
-              Servicio de búsqueda de información geoespacial en base a
-              metadatos.
-            </p>
-          </a>
-        </div>
-      </section>
-      <!-- CIRCULOS -->
-      <section
-        class="justify-around hidden w-4/5 mx-auto my-24 xl:w-3/5 lg:flex"
-      >
-        <div id="us-btn" class="circ-container">
-          <div
-            class="grid w-24 h-24 rounded-full place-items-center bg-accentCol"
-          >
-            <i class="cards-icon fa-solid fa-users-gear"></i>
-          </div>
-          <h3 class="my-3">Sobre nosotros</h3>
-        </div>
-        <a href="#contact">
-          <div class="circ-container">
-            <div
-              class="grid w-24 h-24 rounded-full place-items-center bg-accentCol"
-            >
-              <i class="cards-icon fa-regular fa-paper-plane"></i>
+      <sesction id="recursos" class="bg-secCol">
+        <div class="p-5 mx-auto text-center lg:w-3/4">
+          <h2 class="py-4 text-3xl font-bold uppercase text-accentCol">
+            Recursos
+          </h2>
+          <div class="flex flex-col grid-cols-5 gap-2 text-gray-800 sm:grid">
+            <div class="resources-card group">
+              <div class="resources-card-bg"></div>
+              <i
+                class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-house-user cards-icon"
+              ></i>
+              <p class="relative group-hover:text-white">
+                Recorrido por la página principal
+              </p>
             </div>
-            <h3 class="my-3">Contactanos</h3>
-          </div>
-        </a>
-        <a href="recursos.html">
-          <div class="circ-container">
-            <div
-              class="grid w-24 h-24 rounded-full place-items-center bg-accentCol"
-            >
-              <i class="cards-icon fa-solid fa-gears"></i>
+            <div class="resources-card group">
+              <div class="resources-card-bg"></div>
+              <i
+                class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-layer-group cards-icon"
+              ></i>
+              <p class="relative group-hover:text-white">
+                Recorrido por el visualizador
+              </p>
             </div>
-            <h3 class="my-3">Recursos</h3>
+            <div class="resources-card group">
+              <div class="resources-card-bg"></div>
+              <i
+                class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-sitemap cards-icon"
+              ></i>
+              <p class="relative group-hover:text-white">
+                Tutorial de conexión a geoservicios
+              </p>
+            </div>
+            <div class="resources-card group">
+              <div class="resources-card-bg"></div>
+              <i
+                class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-map-location-dot cards-icon"
+              ></i>
+              <p class="relative group-hover:text-white">
+                Creación de datos espaciales con Google My Maps
+              </p>
+            </div>
+            <div class="resources-card group">
+              <div class="resources-card-bg"></div>
+              <i
+                class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-folder-tree cards-icon"
+              ></i>
+              <p class="relative group-hover:text-white">
+                Tutorial de descarga de metadatos
+              </p>
+            </div>
           </div>
-        </a>
-      </section>
-      <!-- PARTNERSHIPS -->
-      <section class="flex-col items-center hidden bg-gray-200 lg:flex">
-        <h2 class="my-5 text-xl font-bold text-accentCol">ADHESIONES</h2>
-        <p class="w-3/5 text-center">
-          En el marco de la implementación de estándares tanto en la elaboración
-          de datos espaciales como en el servicio de mapas, nos comprometemos y
-          adherimos a las políticas y lineamientos marcados por IDERA e IDEBA.
-        </p>
-        <div class="flex gap-5 my-10 logo-container">
-          <a href="https://www.idera.gob.ar/"
-            ><img src="img/idera.png" class="w-64" alt=""
-          /></a>
-          <a href="https://ideba.gba.gob.ar/"
-            ><img src="img/ideba.png" class="w-64" alt=""
-          /></a>
         </div>
-      </section>
+      </sesction>
       <!-- CONTACT -->
       <section
         id="contact"
@@ -413,5 +320,21 @@
 
     <script src="flowbite.min.js"></script>
     <script src="scripts.js"></script>
+    <script>
+      // NOSOTROS
+      var nosotrosMobileBtn = document.getElementById("us-mobile-btn");
+      var nosotrosSection = document.getElementById("nosotros");
+      var nosotrosCloseBtn = document.getElementById("us-close-btn");
+
+      // Mobile
+      nosotrosMobileBtn.addEventListener("click", function () {
+        nosotrosSection.classList.toggle("hidden");
+      });
+
+      // Close btn
+      nosotrosCloseBtn.addEventListener("click", function () {
+        nosotrosSection.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
