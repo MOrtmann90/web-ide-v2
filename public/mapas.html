@@ -195,10 +195,31 @@
                 <span class="ml-3">Recursos</span>
               </a>
             </li>
+            <li>
+              <a
+                id="us-mobile-btn"
+                href="#"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Nosotros</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                id="contact-mobile-btn"
+                href="#"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Contactanos</span>
+              </a>
+            </li>
           </ul>
         </div>
       </aside>
-      <!-- NAV BAR -->
+      <!-- ========================================================================================================= -->
+      <!-- ================================================ NAV BAR ================================================ -->
+      <!-- ========================================================================================================= -->
       <header
         class="bg-white relative bg-[url('img/banner-tandil-rs.png')] bg-cover hidden md:block"
       >
@@ -224,11 +245,7 @@
               class="transition-all-[duration-0] border-x-0 hover:border-b-2"
               ><li>Visualizador</li></a
             >
-            <a
-              href="mapas.html"
-              class="transition-all-[duration-0] border-x-0 hover:border-b-2"
-              ><li>Mapas temáticos</li></a
-            >
+            <a href="mapas.html" class="border-b-2"><li>Mapas temáticos</li></a>
             <a
               href="geoservicios.html"
               class="transition-all-[duration-0] border-x-0 hover:border-b-2"
@@ -239,7 +256,11 @@
               class="transition-all-[duration-0] border-x-0 hover:border-b-2"
               ><li>Catálogo de metadatos</li></a
             >
-            <a href="recursos.html" class="border-b-2"><li>Recursos</li></a>
+            <a
+              href="recursos.html"
+              class="transition-all-[duration-0] border-x-0 hover:border-b-2"
+              ><li>Recursos</li></a
+            >
           </ul>
 
           <div class="hidden my-auto xl:block">
@@ -253,77 +274,103 @@
         ></div>
       </header>
 
-      <!-- MAIN -->
-      <section id="recursos" class="flex flex-col px-8 py-12 bg-secCol">
-        <div class="lg:max-w-[1000px] mx-auto text-justify leading-loose">
+      <!-- ==================================================== -->
+      <!-- ======================= MAIN ======================= -->
+      <!-- ==================================================== -->
+      <section id="mapas" class="flex flex-col px-8 py-12 bg-secCol">
+        <div class="mx-auto leading-loose text-center ">
           <h2
             class="py-4 mb-8 text-3xl font-bold text-center uppercase text-accentCol"
           >
             Mapas temáticos
           </h2>
-          <div class="flex flex-wrap justify-center gap-5 text-gray-800">
-            <div class="resources-card group">
-              <a href="docs/01 - Página principal.pdf" target="_blank">
-                <div class="resources-card-bg"></div>
-                <i
-                  class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-house-user cards-icon"
-                ></i>
-                <p class="relative group-hover:text-white">
-                  Recorrido por la página principal
-                </p>
-              </a>
-            </div>
-            <div class="resources-card group">
-              <a href="docs/02 -Visualizador.pdf" target="_blank">
-                <div class="resources-card-bg"></div>
-                <i
-                  class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-layer-group cards-icon"
-                ></i>
-                <p class="relative group-hover:text-white">
-                  Recorrido por el visualizador
-                </p>
-              </a>
-            </div>
-            <div class="resources-card group">
-              <a href="docs/03 - Geoservicios.pdf" target="_blank">
-                <div class="resources-card-bg"></div>
-                <i
-                  class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-sitemap cards-icon"
-                ></i>
-                <p class="relative group-hover:text-white">
-                  Tutorial de conexión a geoservicios
-                </p>
-              </a>
-            </div>
-            <div class="resources-card group">
-              <a
-                href="docs/04 - Creación de datos espaciales con Google My Maps.pdf"
-                target="_blank"
+          <div class="flex flex-col flex-wrap justify-center gap-6 md:flex-row">
+            <a
+              href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/01-mapa-acceso-justicia/index-justicia.html" target="_blank"
+              class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
+            >
+              <img
+                class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
+                src="img/01-acceso-justicia.jpg"
+                alt=""
+              />
+              <div
+                class="flex flex-col justify-between px-6 py-4 leading-normal"
               >
-                <div class="resources-card-bg"></div>
-                <i
-                  class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-map-location-dot cards-icon"
-                ></i>
-                <p class="relative group-hover:text-white">
-                  Creación de datos espaciales con Google My Maps
+                <h3 class="mb-2 text-2xl font-bold text-accentCol">
+                  Mapa de acceso a la Justicia
+                </h3>
+                <p class="mb-3 font-normal text-gray-700">
+                  Elaborado conjuntamente con la Dirección de Género y la
+                  Dirección de Prensa.
                 </p>
-              </a>
-            </div>
-            <div class="resources-card group">
-              <a href="docs/05 - Descarga de metadatos.pdf" target="_blank">
-                <div class="resources-card-bg"></div>
-                <i
-                  class="relative my-4 text-gray-800 group-hover:text-white fa-solid fa-folder-tree cards-icon"
-                ></i>
-                <p class="relative group-hover:text-white">
-                  Tutorial de descarga de metadatos
+              </div>
+            </a>
+            <a
+              href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/02-mapa-planteras/index-planteras.html" target="_blank"
+              class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
+            >
+              <img
+                class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
+                src="img/02-planteras.jpg"
+                alt=""
+              />
+              <div
+                class="flex flex-col justify-between px-6 py-4 leading-normal"
+              >
+                <h3 class="mb-2 text-2xl font-bold text-accentCol">
+                    Mapa de planteras de la ciudad de Tandil
+                </h3>
+                <p class="mb-3 font-normal text-gray-700">
+                  Datos del Censo de Arbolado 2011 por la Dirección de Parques y
+                  Paseos y la Facultad de Ciencias Humanas.
                 </p>
-              </a>
+              </div>
+            </a>
+            <a
+            href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/03-mapa-emprendedores/index-emprendedores.html" target="_blank"
+            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
+          >
+            <img
+              class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
+              src="img/03-emprendedores.jpg"
+              alt=""
+            />
+            <div
+              class="flex flex-col justify-between px-6 py-4 leading-normal"
+            >
+              <h3 class="mb-2 text-2xl font-bold text-accentCol">
+                  Mapa de emprendedores
+              </h3>
+              <p class="mb-3 font-normal text-gray-700">
+                Elaborado con la Oficina de Empleo - Secretaría de Desarrollo Productivo y Relaciones Internacionales.
+              </p>
             </div>
+          </a>
+          <a
+          href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/04-evp-wifi/index.html" target="_blank"
+          class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
+        >
+          <img
+            class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
+            src="img/04-evp-wifi.jpg"
+            alt=""
+          />
+          <div
+            class="flex flex-col justify-between px-6 py-4 leading-normal"
+          >
+            <h3 class="mb-2 text-2xl font-bold text-accentCol">
+                Espacios Verdes Públicos con Wi-Fi
+            </h3>
+            <p class="mb-3 font-normal text-gray-700">
+              Elaborado con la Secretaría de Innovación Tecnológica y Participación Ciudadana.
+            </p>
+          </div>
+        </a>
           </div>
         </div>
       </section>
-
+      <!-- Volver a inicio btn -->
       <div class="py-8 text-center bg-secCol">
         <a href="index.html">
           <button
@@ -336,81 +383,88 @@
           </button>
         </a>
       </div>
-      <!-- CONTACT -->
-      <section
-        id="contact"
-        class="flex flex-col px-5 py-8 text-center bg-mainCol text-secCol"
-      >
-        <div class="lg:grid lg:center lg:w-[1200px] grid-cols-3 mx-auto">
-          <div class="flex flex-col justify-between">
-            <h2 class="text-xl font-bold">CONTACTO</h2>
-            <p class="mb-5 font-light text-gray-300">
-              Alguna consulta técnica? Alguna recomendación o detalle para
-              mejorar? Escribinos!
-            </p>
-            <a
-              class="font-medium links text-accentCol"
-              href="mailto:ide@tandil.gov.ar"
-              ><i class="mr-2 fa-solid fa-envelope"></i>ide@tandil.gov.ar</a
-            >
-            <a
-              class="font-medium links text-accentCol"
-              href="https://goo.gl/maps/abL3JqonMU3iAZTc7"
-              target="_blank"
-              ><i class="mr-2 fa-solid fa-location-dot"></i>Belgrano 485</a
-            >
-          </div>
-          <hr class="w-3/5 mx-auto my-8 lg:hidden" />
-          <div class="px-4 bg-mainCol text-secCol">
-            <h3 class="mb-5 font-semibold">LINKS DE INTERÉS</h3>
-            <ul class="font-light">
-              <li class="links">
-                <a href="https://www.tandil.gov.ar/" target="_blank"
-                  >Municipio de Tandil</a
-                >
-              </li>
-              <li class="text-gray-300 links">
-                <a
-                  href="http://cipres.tandil.gov.ar/estadistica-local/index.html"
-                  target="_blank"
-                  >Dirección de Estadística Local</a
-                >
-              </li>
-              <li class="text-gray-300 links">
-                <a
-                  href="http://indicadores.tandil.gov.ar/indicadoresmt/web/index.php/index"
-                  target="_blank"
-                  >Plataforma de Indicadores Locales - PIL</a
-                >
-              </li>
-              <li class="text-gray-300 links">
-                <a
-                  href="http://cipres.tandil.gov.ar/estadistica-local/boletines.html"
-                  target="_blank"
-                  >Boletines estadísticos</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="flex-col content-end justify-around hidden lg:flex">
-            <a href="#"
-              ><img class="w-56 mx-auto" src="img/logo-ide.png" alt=""
-            /></a>
-            <a href="https://www.tandil.gov.ar/">
-              <img class="mx-auto w-36" src="img/logo_municipio.png" alt="" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- FOOTER -->
-      <footer class="py-4 text-sm text-center bg-footerCol text-secCol">
-        <p class="w-3/5 mx-auto">
-          © 2023 Todos los derechos reservados. Municipio de Tandil.
-        </p>
-      </footer>
     </div>
+
+    <!-- ========================================================================================================= -->
+    <!-- ================================================ CONTACT ================================================ -->
+    <!-- ========================================================================================================= -->
+
+    <section
+      id="contact"
+      class="flex flex-col px-5 py-8 text-center bg-mainCol text-secCol"
+    >
+      <div class="lg:grid lg:center lg:w-[1200px] grid-cols-3 mx-auto">
+        <div class="flex flex-col justify-between">
+          <h2 class="text-xl font-bold">CONTACTO</h2>
+          <p class="mb-5 font-light text-gray-300">
+            Alguna consulta técnica? Alguna recomendación o detalle para
+            mejorar? Escribinos!
+          </p>
+          <a
+            class="font-medium links text-accentCol"
+            href="mailto:ide@tandil.gov.ar"
+            ><i class="mr-2 fa-solid fa-envelope"></i>ide@tandil.gov.ar</a
+          >
+          <a
+            class="font-medium links text-accentCol"
+            href="https://goo.gl/maps/abL3JqonMU3iAZTc7"
+            target="_blank"
+            ><i class="mr-2 fa-solid fa-location-dot"></i>Belgrano 485</a
+          >
+        </div>
+        <hr class="w-3/5 mx-auto my-8 lg:hidden" />
+        <div class="px-4 bg-mainCol text-secCol">
+          <h3 class="mb-5 font-semibold">LINKS DE INTERÉS</h3>
+          <ul class="font-light">
+            <li class="links">
+              <a href="https://www.tandil.gov.ar/" target="_blank"
+                >Municipio de Tandil</a
+              >
+            </li>
+            <li class="text-gray-300 links">
+              <a
+                href="http://cipres.tandil.gov.ar/estadistica-local/index.html"
+                target="_blank"
+                >Dirección de Estadística Local</a
+              >
+            </li>
+            <li class="text-gray-300 links">
+              <a
+                href="http://indicadores.tandil.gov.ar/indicadoresmt/web/index.php/index"
+                target="_blank"
+                >Plataforma de Indicadores Locales - PIL</a
+              >
+            </li>
+            <li class="text-gray-300 links">
+              <a
+                href="http://cipres.tandil.gov.ar/estadistica-local/boletines.html"
+                target="_blank"
+                >Boletines estadísticos</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="flex-col content-end justify-around hidden lg:flex">
+          <a href="#"
+            ><img class="w-56 mx-auto" src="img/logo-ide.png" alt=""
+          /></a>
+          <a href="https://www.tandil.gov.ar/">
+            <img class="mx-auto w-36" src="img/logo_municipio.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ========================================================================================================= -->
+    <!-- ================================================ FOOTER ================================================ -->
+    <!-- ========================================================================================================= -->
+    <footer class="py-4 text-sm text-center bg-footerCol text-secCol">
+      <p class="w-3/5 mx-auto">
+        © 2023 Todos los derechos reservados. Municipio de Tandil.
+      </p>
+    </footer>
 
     <script src="flowbite.min.js"></script>
     <script src="loader.js"></script>
+    <script src="accesibilidad.js"></script>
   </body>
 </html>

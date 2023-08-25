@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDE Tandil</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="main.css" />
+    <!-- AWESOME FONTS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="select-none">
+    <!-- LOADING SCREEN -->
+    <div
+      class="relative flex flex-col justify-center h-[100dvh] gap-16 opacity-100 trans4tion-opacity loader-container bg-mainCol"
+    >
+      <img class="mx-auto w-72" src="img/logo-ide.png" alt="" />
+      <img
+        class="mx-auto opacity-75 w-36"
+        src="img/logo_municipio.png"
+        alt=""
+      />
+
+      ><img
+        class="absolute inset-x-0 w-12 mx-auto bottom-10"
+        src="img/tail-spin.svg"
+        alt=""
+      />
+    </div>
+
+    <!-- RESPONSIVE MENU BAR -->
+    <div id="menu-responsive" class="hidden opacity-0 content-container">
+      <div class="flex justify-between w-full bg-mainCol md:hidden">
+        <img class="pl-2 my-auto h-7" src="img/logo_ide2.png" alt="" />
+        <button
+          data-drawer-target="sidebar"
+          data-drawer-toggle="sidebar"
+          aria-controls="sidebar"
+          type="button"
+          class="p-3 text-sm text-secCol md:hidden focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        >
+          <span class="sr-only">Open sidebar</span>
+          <svg
+            class="w-6 h-6"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              fill-rule="evenodd"
+              d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <!-- ASIDE BAR -->
+      <aside
+        id="sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full md:hidden md:translate-x-0 bg-mainCol"
+        aria-label="Sidebar"
+      >
+        <div class="h-full px-3 py-4 bg-gray-50 dark:bg-gray-800">
+          <ul id="lista-aside-bar" class="space-y-2 font-medium">
+            <li>
+              <a
+                href="index.html"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Principal</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Visualizador</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="mapas.html"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Mapas temáticos</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="geoservicios.html"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Geoservicios</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="http://mapa.tandil.gov.ar/geonetwork"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Catálogo de metadatos</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="recursos.html"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Recursos</span>
+              </a>
+            </li>
+            <li>
+              <a
+                id="us-mobile-btn"
+                href="#"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Nosotros</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                id="contact-mobile-btn"
+                href="#"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Contactanos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!-- NAV BAR -->
+      <header
+        class="bg-white relative bg-[url('img/banner-tandil-rs.png')] bg-cover hidden md:block"
+      >
+        <div
+          class="relative z-10 flex justify-center w-full px-4 text-center xl:justify-between text-secCol"
+        >
+          <div class="hidden my-auto xl:block">
+            <a href="index.html">
+              <img class="w-44" src="img/logo_ide2.png" alt="" />
+            </a>
+          </div>
+
+          <ul
+            class="flex items-center content-between h-20 gap-8 text-lg font-semibold uppercase"
+          >
+            <a
+              href="index.html"
+              class="transition-all-[duration-0] border-x-0 hover:border-b-2"
+              ><li>Inicio</li></a
+            >
+            <a
+              href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html"
+              class="transition-all-[duration-0] border-x-0 hover:border-b-2"
+              ><li>Visualizador</li></a
+            >
+            <a
+              href="mapas.html"
+              class="transition-all-[duration-0] border-x-0 hover:border-b-2"
+              ><li>Mapas temáticos</li></a
+            >
+            <a href="geoservicios.html" class="border-b-2"
+              ><li>Geoservicios</li></a
+            >
+            <a
+              href="http://mapa.tandil.gov.ar/geonetwork"
+              class="transition-all-[duration-0] border-x-0 hover:border-b-2"
+              ><li>Catálogo de metadatos</li></a
+            >
+            <a
+              href="recursos.html"
+              class="transition-all-[duration-0] border-x-0 hover:border-b-2"
+              ><li>Recursos</li></a
+            >
+          </ul>
+
+          <div class="hidden my-auto xl:block">
+            <a href="https://www.tandil.gov.ar/">
+              <img class="w-24" src="img/logo_municipio.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <div
+          class="absolute top-0 left-0 z-0 w-full h-full opacity-75 bg-gradient-to-b from-mainCol to-accentCol"
+        ></div>
+      </header>
+
+      <!-- MAIN -->
+      <section id="geoservicios" class="flex flex-col px-8 py-12 bg-secCol">
+        <div class="lg:max-w-[1000px] mx-auto text-justify leading-loose">
+          <h2
+            class="py-4 mb-8 text-3xl font-bold text-center uppercase text-accentCol"
+          >
+            Geoservicios
+          </h2>
+          <p>
+            Los geoservicios publicados en nuestra IDE siguen las
+            recomendaciones de IDERA, IDEBA y la Open Geoespatial Consortium
+            (OGC), quien define los estándares abiertos con el objetivo de
+            promover y facilitar el uso global de la información geográfica.
+          </p>
+          <p>
+            Los geoservicios permiten acceder a la información geográfica
+            almacenada en los servidores de los organismos productores, de una
+            forma estandarizada y mediante cualquier acción compatible. De esta
+            manera se asegura que la información consultada se encuentre
+            actualizada.
+          </p>
+          <p>
+            Estos geoservicios se pueden consultar a través de un Sistema de
+            Información Geográfica (SIG). Para agregarlos a QGIS, se encuentra
+            disponible el videotutorial en la sección
+            <a class="font-semibold text-accentCol" href="recursos.html"
+              >RECURSOS</a
+            >.
+          </p>
+          <hr />
+          <h3 class="my-8 text-xl font-bold text-center uppercase">
+            ¿QUÉ SERVICIOS TIENE IDE TANDIL?
+          </h3>
+          <h4 class="my-4 text-lg font-bold">Servicios de Visualización</h4>
+          <p>
+            <span class="font-bold">Servicio de Mapas en Web (WMS):</span>
+            permite la visualización de información geográfica a partir de una
+            representación de una imagen del mundo real. Esta representación
+            puede provenir de un archivo vectorial de un SIG, un mapa digital,
+            una ortofoto, una imagen de satélite, entre otros. Tiene la
+            posibilidad de organizarse en una o más capas de datos, que pueden
+            visualizarse u ocultarse una a una. Se puede consultar cierta
+            información disponible y las características de la imagen del mapa.
+          </p>
+          <p>
+            Permiten, como mínimo, mostrar conjuntos de datos espaciales,
+            navegar, acercarse o alejarse mediante zoom, desplazamiento o
+            superposición visual de estos datos, así como ofrecer su información
+            asociada y los símbolos convencionales con los que se representan.
+          </p>
+          <h4 class="my-4 text-lg font-bold">Servicios de Descarga</h4>
+          <p>
+            <span class="font-bold">Servicio de Vectores en WEB (WFS):</span>
+            permite el acceso y consulta de los atributos de un vector (feature)
+            que representa información geográfica como un río, una ciudad o un
+            lago, con una geometría descrita por un conjunto de coordenadas. El
+            servicio WFS permite no solo visualizar la información tal y como
+            permite un WMS, sino también consultarla y editarla libremente, con
+            posibilidades de almacenar los cambios en una versión propia de la
+            información original, almacenada en forma remota.
+          </p>
+          <div
+            class="relative flex flex-col justify-center gap-8 mt-8 mb-4 text-center lg:flex-row"
+          >
+            <div>
+              <h5>Servicios de mapas web</h5>
+              <span
+                id="wms-btn"
+                class="text-2xl font-bold cursor-pointer text-accentCol hover:text-gray-500"
+                >Copiar WMS</span
+              >
+            </div>
+            <div>
+              <h5>Servicios de vectores web</h5>
+              <span
+                id="wfs-btn"
+                class="text-2xl font-bold cursor-pointer text-accentCol hover:text-gray-500"
+                >Copiar WFS</span
+              >
+            </div>
+          </div>
+
+          <div
+            id="geoservicios-alert"
+            class="p-2 mx-auto my-4 text-sm transition-opacity rounded-lg opacity-0 w-fit text-accentCol bg-accentCol/25"
+            role="alert"
+          >
+            <span class="font-medium"
+              ><i class="mr-2 fa-solid fa-circle-check"></i>URL copiada!</span
+            >
+          </div>
+
+          <p class="text-sm text-center">
+            Haciendo click sobre el geoservicio correspondiente se copia la
+            dirección del enlace para luego conectarlo con un SIG.
+          </p>
+        </div>
+      </section>
+
+      <div class="py-8 text-center bg-secCol">
+        <a href="index.html">
+          <button
+            class="px-4 py-2 text-white rounded-full cursor-pointer bg-mainCol w-fit group"
+          >
+            <i
+              class="mx-2 transition group-hover:-translate-x-2 fa-solid fa-arrow-left"
+            ></i>
+            <span>Volver a inicio</span>
+          </button>
+        </a>
+      </div>
+    </div>
+    <!-- CONTACT -->
+    <section
+      id="contact"
+      class="flex flex-col px-5 py-8 text-center bg-mainCol text-secCol"
+    >
+      <div class="lg:grid lg:center lg:w-[1200px] grid-cols-3 mx-auto">
+        <div class="flex flex-col justify-between">
+          <h2 class="text-xl font-bold">CONTACTO</h2>
+          <p class="mb-5 font-light text-gray-300">
+            Alguna consulta técnica? Alguna recomendación o detalle para
+            mejorar? Escribinos!
+          </p>
+          <a
+            class="font-medium links text-accentCol"
+            href="mailto:ide@tandil.gov.ar"
+            ><i class="mr-2 fa-solid fa-envelope"></i>ide@tandil.gov.ar</a
+          >
+          <a
+            class="font-medium links text-accentCol"
+            href="https://goo.gl/maps/abL3JqonMU3iAZTc7"
+            target="_blank"
+            ><i class="mr-2 fa-solid fa-location-dot"></i>Belgrano 485</a
+          >
+        </div>
+        <hr class="w-3/5 mx-auto my-8 lg:hidden" />
+        <div class="px-4 bg-mainCol text-secCol">
+          <h3 class="mb-5 font-semibold">LINKS DE INTERÉS</h3>
+          <ul class="font-light">
+            <li class="links">
+              <a href="https://www.tandil.gov.ar/" target="_blank"
+                >Municipio de Tandil</a
+              >
+            </li>
+            <li class="text-gray-300 links">
+              <a
+                href="http://cipres.tandil.gov.ar/estadistica-local/index.html"
+                target="_blank"
+                >Dirección de Estadística Local</a
+              >
+            </li>
+            <li class="text-gray-300 links">
+              <a
+                href="http://indicadores.tandil.gov.ar/indicadoresmt/web/index.php/index"
+                target="_blank"
+                >Plataforma de Indicadores Locales - PIL</a
+              >
+            </li>
+            <li class="text-gray-300 links">
+              <a
+                href="http://cipres.tandil.gov.ar/estadistica-local/boletines.html"
+                target="_blank"
+                >Boletines estadísticos</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="flex-col content-end justify-around hidden lg:flex">
+          <a href="#"
+            ><img class="w-56 mx-auto" src="img/logo-ide.png" alt=""
+          /></a>
+          <a href="https://www.tandil.gov.ar/">
+            <img class="mx-auto w-36" src="img/logo_municipio.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="py-4 text-sm text-center bg-footerCol text-secCol">
+      <p class="w-3/5 mx-auto">
+        © 2023 Todos los derechos reservados. Municipio de Tandil.
+      </p>
+    </footer>
+
+    <script src="flowbite.min.js"></script>
+    <script src="loader.js"></script>
+    <script src="accesibilidad.js"></script>
+    <script src="clipboardGeoservicios.js"></script>
+  </body>
+</html>

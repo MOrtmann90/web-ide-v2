@@ -32,7 +32,7 @@
   }
 
   .resources-card {
-    @apply relative p-4 rounded-lg cursor-pointer bg-secCol;
+    @apply relative p-4 rounded-lg cursor-pointer w-[300px];
   }
 
   .resources-card-bg {

@@ -29,13 +29,14 @@
       }
     </style>
   </head>
-  <body>
+  <body class="select-none">
+    <!-- NOSOTROS -->
     <div
       id="nosotros"
       class="fixed z-20 hidden w-screen h-screen lg:fixed opacity-95 bg-footerCol"
     >
       <div
-        class="px-8 mx-auto text-justify text-white opacity-100 lg:py-0 lg:text-center lg:w-3/5"
+        class="px-8 mx-auto text-justify text-white opacity-100 lg:py-0 lg:text-center lg:w-2/5"
       >
         <span class="flex justify-end">
           <i
@@ -43,21 +44,53 @@
             class="my-4 mt-8 text-2xl text-white cursor-pointer lg:mt-12 fa-solid fa-xmark"
           ></i>
         </span>
-        <h2 class="mb-4 text-3xl font-bold uppercase lg:my-16">
+        <h2 class="mb-4 text-3xl font-bold uppercase lg:my-16 text-accentCol">
           Sobre nosotros
         </h2>
-        <p class="text-xl text-secCol">
+        <p class="text-xl leading-loose text-secCol">
           La Infraestructura de Datos Espaciales de la ciudad de Tandil es un
           proyecto dependiente del
-          <span class="text-accentCol">Área de Geotecnologías</span> de la
-          Dirección de Estadística Local en la Subsecretaría de Innovación
-          Tecnológica y Participación Ciudadana. Se constituye como una
-          comunidad de diversos actores que trabajan con información geoespacial
-          con el objetivo de propiciar la creación, estandarización y
-          publicación de datos de manera eficiente y oportuna como un aporte
-          fundamental a la democratización del acceso de la información
-          producida por el Municipio.
+          <span class="font-medium text-accentCol">Área de Geotecnologías</span>
+          de la Dirección de Estadística Local en la Subsecretaría de Innovación
+          Tecnológica y Participación Ciudadana.
         </p>
+        <hr class="w-2/5 mx-auto my-8 border-gray-700" />
+        <p class="text-xl leading-loose text-secCol">
+          Se constituye como una comunidad de diversos actores que trabajan con
+          información georeferenciada con el objetivo de propiciar la creación,
+          estandarización y publicación de datos de manera eficiente y oportuna
+          como un aporte fundamental a la democratización del acceso de la
+          información producida por el Municipio.
+        </p>
+      </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div
+      id="contacto"
+      class="fixed z-20 hidden w-screen h-screen lg:fixed opacity-95 bg-footerCol"
+    >
+      <div
+        class="px-8 mx-auto text-center text-white opacity-100 lg:py-0 lg:w-2/5"
+      >
+        <span class="flex justify-end">
+          <i
+            id="contact-close-btn"
+            class="my-4 mt-8 text-2xl text-white cursor-pointer lg:mt-12 fa-solid fa-xmark"
+          ></i>
+        </span>
+        <h2 class="mb-4 text-3xl font-bold uppercase lg:my-16 text-accentCol">
+          Contacto
+        </h2>
+        <p class="text-xl leading-loose text-secCol">
+          Por cualquier consulta o sugerencia, podés escribirnos a:
+        </p>
+        <hr class="w-3/5 mx-auto my-8 border-gray-700" />
+        <a
+          class="text-2xl font-medium leading-loose text-accentCol links"
+          href="mailto:ide@tandil.gov.ar"
+          ><i class="mr-2 fa-solid fa-envelope"></i>ide@tandil.gov.ar</a
+        >
       </div>
     </div>
 
@@ -122,23 +155,42 @@
                 <span class="ml-3">Principal</span>
               </a>
             </li>
+
             <li>
               <a
-                id="us-mobile-btn"
-                href="#"
+                href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html"
                 class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
-                <span class="ml-3">Nosotros</span>
+                <span class="ml-3">Visualizador</span>
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="mapas.html"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Mapas temáticos</span>
               </a>
             </li>
             <li>
               <a
-                href="#contact"
+                href="geoservicios.html"
                 class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
-                <span class="ml-3">Contactanos</span>
+                <span class="ml-3">Geoservicios</span>
               </a>
             </li>
+
+            <li>
+              <a
+                href="http://mapa.tandil.gov.ar/geonetwork"
+                class="flex items-center p-2 rounded-lg text-accentCol dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+              >
+                <span class="ml-3">Catálogo de metadatos</span>
+              </a>
+            </li>
+
             <li>
               <a
                 href="recursos.html"
@@ -195,7 +247,7 @@
         class="grid w-3/4 grid-cols-2 grid-rows-2 gap-5 mx-auto my-6 place-items-center lg:hidden"
       >
         <a
-          href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard"
+          href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html"
           class="links"
         >
           <figure>
@@ -205,7 +257,7 @@
             </figcaption>
           </figure>
         </a>
-        <a href="" class="links">
+        <a href="mapas.html" class="links">
           <figure>
             <img class="image" src="img/icon2.png" alt="" />
             <figcaption class="text-center lg:uppercase">
@@ -236,7 +288,7 @@
           class="absolute -top-10 left-0 right-0 flex gap-8 mx-8 card-container xl:mx-auto xl:max-w-[1100px]"
         >
           <a
-            href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html?zoom=12&lat=-37.3237&lng=-59.1078&layers=OSM%20Standard"
+            href="http://mapa.tandil.gov.ar/IdeTandil/visualizador.html"
             class="cards"
           >
             <figure>
@@ -249,7 +301,7 @@
               que se producen en el Municipio y organismos afines.
             </p>
           </a>
-          <a href="" class="cards">
+          <a href="mapas.html" class="cards">
             <figure>
               <img class="image" src="img/icon2.png" alt="" />
               <figcaption class="lg:uppercase">Mapas temáticos</figcaption>
@@ -260,7 +312,7 @@
               temáticas de interés particulares.
             </p>
           </a>
-          <a href="" class="cards">
+          <a href="geoservicios.html" class="cards">
             <figure>
               <img class="image" src="img/icon3.png" alt="" />
               <figcaption class="lg:uppercase">Geoservicios</figcaption>
@@ -272,7 +324,7 @@
               Geográfica.
             </p>
           </a>
-          <a href="" class="cards">
+          <a href="http://mapa.tandil.gov.ar/geonetwork" class="cards">
             <figure>
               <img class="image" src="img/icon4.png" alt="" />
               <figcaption class="lg:uppercase">
@@ -299,16 +351,16 @@
           </div>
           <h3 class="my-3">Sobre nosotros</h3>
         </div>
-        <a href="#contact">
-          <div class="circ-container">
-            <div
-              class="grid w-24 h-24 rounded-full place-items-center bg-accentCol"
-            >
-              <i class="cards-icon fa-regular fa-paper-plane"></i>
-            </div>
-            <h3 class="my-3">Contactanos</h3>
+
+        <div id="contact-btn" class="circ-container">
+          <div
+            class="grid w-24 h-24 rounded-full place-items-center bg-accentCol"
+          >
+            <i class="cards-icon fa-regular fa-envelope"></i>
           </div>
-        </a>
+          <h3 class="my-3">Contactanos</h3>
+        </div>
+
         <a href="recursos.html">
           <div class="circ-container">
             <div
@@ -412,6 +464,8 @@
     </div>
 
     <script src="flowbite.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="loader.js"></script>
+    <script src="externos.js"></script>
+    <script src="accesibilidad.js"></script>
   </body>
 </html>
