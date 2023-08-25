@@ -30,66 +30,6 @@
     </style>
   </head>
   <body class="select-none">
-    <!-- <div
-      id="nosotros"
-      class="fixed z-20 hidden w-screen h-screen lg:fixed opacity-95 bg-footerCol"
-    >
-      <div
-        class="px-8 mx-auto text-justify text-white opacity-100 lg:py-0 lg:text-center lg:w-3/5"
-      >
-        <span class="flex justify-end">
-          <i
-            id="us-close-btn"
-            class="my-4 mt-8 text-2xl text-white cursor-pointer lg:mt-12 fa-solid fa-xmark"
-          ></i>
-        </span>
-        <h2 class="mb-4 text-3xl font-bold uppercase lg:my-16">
-          Sobre nosotros
-        </h2>
-        <p class="text-xl text-secCol">
-          La Infraestructura de Datos Espaciales de la ciudad de Tandil es un
-          proyecto dependiente del
-          <span class="text-accentCol">Área de Geotecnologías</span> de la
-          Dirección de Estadística Local en la Subsecretaría de Innovación
-          Tecnológica y Participación Ciudadana. Se constituye como una
-          comunidad de diversos actores que trabajan con información geoespacial
-          con el objetivo de propiciar la creación, estandarización y
-          publicación de datos de manera eficiente y oportuna como un aporte
-          fundamental a la democratización del acceso de la información
-          producida por el Municipio.
-        </p>
-      </div>
-    </div> -->
-
-    <!-- CONTACTO -->
-    <!-- <div
-      id="contacto"
-      class="fixed z-20 hidden w-screen h-screen lg:fixed opacity-95 bg-footerCol"
-    >
-      <div
-        class="px-8 mx-auto text-center text-white opacity-100 lg:py-0 lg:w-2/5"
-      >
-        <span class="flex justify-end">
-          <i
-            id="contact-close-btn"
-            class="my-4 mt-8 text-2xl text-white cursor-pointer lg:mt-12 fa-solid fa-xmark"
-          ></i>
-        </span>
-        <h2 class="mb-4 text-3xl font-bold uppercase lg:my-16 text-accentCol">
-          Contacto
-        </h2>
-        <p class="text-xl leading-loose text-secCol">
-          Por cualquier consulta o sugerencia, podés escribirnos a:
-        </p>
-        <hr class="w-3/5 mx-auto my-8 border-gray-700" />
-        <a
-          class="text-2xl font-medium leading-loose text-accentCol links"
-          href="mailto:ide@tandil.gov.ar"
-          ><i class="mr-2 fa-solid fa-envelope"></i>ide@tandil.gov.ar</a
-        >
-      </div>
-    </div> -->
-
     <!-- LOADING SCREEN -->
     <div
       class="relative flex flex-col justify-center h-[100dvh] gap-16 opacity-100 trans4tion-opacity loader-container bg-mainCol"
@@ -217,9 +157,9 @@
           </ul>
         </div>
       </aside>
-      <!-- ========================================================================================================= -->
-      <!-- ================================================ NAV BAR ================================================ -->
-      <!-- ========================================================================================================= -->
+      <!-- ==================================================== -->
+      <!-- ======================= NAV BAR ==================== -->
+      <!-- ==================================================== -->
       <header
         class="bg-white relative bg-[url('img/banner-tandil-rs.png')] bg-cover hidden md:block"
       >
@@ -278,7 +218,7 @@
       <!-- ======================= MAIN ======================= -->
       <!-- ==================================================== -->
       <section id="mapas" class="flex flex-col px-8 py-12 bg-secCol">
-        <div class="mx-auto leading-loose text-center ">
+        <div class="mx-auto leading-loose text-center">
           <h2
             class="py-4 mb-8 text-3xl font-bold text-center uppercase text-accentCol"
           >
@@ -286,8 +226,9 @@
           </h2>
           <div class="flex flex-col flex-wrap justify-center gap-6 md:flex-row">
             <a
-              href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/01-mapa-acceso-justicia/index-justicia.html" target="_blank"
-              class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
+              href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/01-mapa-acceso-justicia/index-justicia.html"
+              target="_blank"
+              class="flex flex-col bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
             >
               <img
                 class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
@@ -295,7 +236,7 @@
                 alt=""
               />
               <div
-                class="flex flex-col justify-between px-6 py-4 leading-normal"
+                class="flex flex-col px-6 py-4 leading-normal text-left"
               >
                 <h3 class="mb-2 text-2xl font-bold text-accentCol">
                   Mapa de acceso a la Justicia
@@ -307,7 +248,8 @@
               </div>
             </a>
             <a
-              href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/02-mapa-planteras/index-planteras.html" target="_blank"
+              href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/02-mapa-planteras/index-planteras.html"
+              target="_blank"
               class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
             >
               <img
@@ -316,10 +258,10 @@
                 alt=""
               />
               <div
-                class="flex flex-col justify-between px-6 py-4 leading-normal"
+                class="flex flex-col px-6 py-4 leading-normal text-left"
               >
                 <h3 class="mb-2 text-2xl font-bold text-accentCol">
-                    Mapa de planteras de la ciudad de Tandil
+                  Mapa de planteras de la ciudad de Tandil
                 </h3>
                 <p class="mb-3 font-normal text-gray-700">
                   Datos del Censo de Arbolado 2011 por la Dirección de Parques y
@@ -328,45 +270,49 @@
               </div>
             </a>
             <a
-            href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/03-mapa-emprendedores/index-emprendedores.html" target="_blank"
-            class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
-          >
-            <img
-              class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
-              src="img/03-emprendedores.jpg"
-              alt=""
-            />
-            <div
-              class="flex flex-col justify-between px-6 py-4 leading-normal"
+              href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/03-mapa-emprendedores/index-emprendedores.html"
+              target="_blank"
+              class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
             >
-              <h3 class="mb-2 text-2xl font-bold text-accentCol">
+              <img
+                class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
+                src="img/03-emprendedores.jpg"
+                alt=""
+              />
+              <div
+                class="flex flex-col px-6 py-4 leading-normal text-left"
+              >
+                <h3 class="mb-2 text-2xl font-bold text-accentCol">
                   Mapa de emprendedores
-              </h3>
-              <p class="mb-3 font-normal text-gray-700">
-                Elaborado con la Oficina de Empleo - Secretaría de Desarrollo Productivo y Relaciones Internacionales.
-              </p>
-            </div>
-          </a>
-          <a
-          href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/04-evp-wifi/index.html" target="_blank"
-          class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
-        >
-          <img
-            class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
-            src="img/04-evp-wifi.jpg"
-            alt=""
-          />
-          <div
-            class="flex flex-col justify-between px-6 py-4 leading-normal"
-          >
-            <h3 class="mb-2 text-2xl font-bold text-accentCol">
-                Espacios Verdes Públicos con Wi-Fi
-            </h3>
-            <p class="mb-3 font-normal text-gray-700">
-              Elaborado con la Secretaría de Innovación Tecnológica y Participación Ciudadana.
-            </p>
-          </div>
-        </a>
+                </h3>
+                <p class="mb-3 font-normal text-gray-700">
+                  Elaborado con la Oficina de Empleo - Secretaría de Desarrollo
+                  Productivo y Relaciones Internacionales.
+                </p>
+              </div>
+            </a>
+            <a
+              href="http://mapa.tandil.gov.ar/IdeTandil/mapasWeb/04-evp-wifi/index.html"
+              target="_blank"
+              class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-lg hover:bg-gray-100"
+            >
+              <img
+                class="object-cover w-full rounded-t-lg h-52 md:h-full md:w-2/5 md:rounded-none md:rounded-l-lg"
+                src="img/04-evp-wifi.jpg"
+                alt=""
+              />
+              <div
+                class="flex flex-col px-6 py-4 leading-normal text-left"
+              >
+                <h3 class="mb-2 text-2xl font-bold text-accentCol">
+                  Espacios Verdes Públicos con Wi-Fi
+                </h3>
+                <p class="mb-3 font-normal text-gray-700">
+                  Elaborado con la Secretaría de Innovación Tecnológica y
+                  Participación Ciudadana.
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -385,10 +331,9 @@
       </div>
     </div>
 
-    <!-- ========================================================================================================= -->
-    <!-- ================================================ CONTACT ================================================ -->
-    <!-- ========================================================================================================= -->
-
+    <!-- ==================================================== -->
+    <!-- ======================= CONTACT ==================== -->
+    <!-- ==================================================== -->
     <section
       id="contact"
       class="flex flex-col px-5 py-8 text-center bg-mainCol text-secCol"
@@ -454,9 +399,9 @@
         </div>
       </div>
     </section>
-    <!-- ========================================================================================================= -->
-    <!-- ================================================ FOOTER ================================================ -->
-    <!-- ========================================================================================================= -->
+    <!-- ==================================================== -->
+    <!-- ======================= FOOTER ===================== -->
+    <!-- ==================================================== -->
     <footer class="py-4 text-sm text-center bg-footerCol text-secCol">
       <p class="w-3/5 mx-auto">
         © 2023 Todos los derechos reservados. Municipio de Tandil.
