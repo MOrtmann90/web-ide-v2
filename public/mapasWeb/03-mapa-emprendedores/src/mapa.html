@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_79c4c540a77a364fb1486448a24d3e7b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_79c4c540a77a364fb1486448a24d3e7b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_79c4c540a77a364fb1486448a24d3e7b = L.map(
+                "map_79c4c540a77a364fb1486448a24d3e7b",
+                {
+                    center: [-37.31625290066178, -59.141057099997695],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_79c4c540a77a364fb1486448a24d3e7b);
+
+            
+
+        
+    
+            var tile_layer_001ddf3021ea578f149b28ff0bc50c48 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_79c4c540a77a364fb1486448a24d3e7b);
+        
+    
+            map_79c4c540a77a364fb1486448a24d3e7b.fitBounds(
+                [[-37.342049900661614, -59.18220979999781], [-37.29045590066195, -59.09990439999759]],
+                {}
+            );
+        
+    
+        function geo_json_6f4a9a449c8fa8990dba15f70ece139e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": " #110D89", "fillOpacity": 0.5, "opacity": 0.8, "stroke": true, "weight": 7};
+            }
+        }
+        function geo_json_6f4a9a449c8fa8990dba15f70ece139e_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_6f4a9a449c8fa8990dba15f70ece139e_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_6f4a9a449c8fa8990dba15f70ece139e_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_6f4a9a449c8fa8990dba15f70ece139e_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_6f4a9a449c8fa8990dba15f70ece139e.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_6f4a9a449c8fa8990dba15f70ece139e_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_6f4a9a449c8fa8990dba15f70ece139e = L.geoJson(null, {
+                onEachFeature: geo_json_6f4a9a449c8fa8990dba15f70ece139e_onEachFeature,
+            
+                style: geo_json_6f4a9a449c8fa8990dba15f70ece139e_styler,
+                pointToLayer: geo_json_6f4a9a449c8fa8990dba15f70ece139e_pointToLayer
+        });
+
+        function geo_json_6f4a9a449c8fa8990dba15f70ece139e_add (data) {
+            geo_json_6f4a9a449c8fa8990dba15f70ece139e
+                .addData(data)
+                .addTo(map_79c4c540a77a364fb1486448a24d3e7b);
+        }
+            geo_json_6f4a9a449c8fa8990dba15f70ece139e_add({"bbox": [-59.18220979999781, -37.342049900661614, -59.09990439999759, -37.29045590066195], "features": [{"bbox": [-59.144340999997695, -37.315937800661764, -59.144340999997695, -37.315937800661764], "geometry": {"coordinates": [-59.144340999997695, -37.315937800661764, 0.0], "type": "Point"}, "id": "0", "properties": {"Direcci\u00f3n": "Hip\u00f3lito Yrigoyen 1519", "Nombre": "Basterrica Camila Aylen"}, "type": "Feature"}, {"bbox": [-59.142232599997705, -37.327104000661706, -59.142232599997705, -37.327104000661706], "geometry": {"coordinates": [-59.142232599997705, -37.327104000661706, 0.0], "type": "Point"}, "id": "1", "properties": {"Direcci\u00f3n": "Sarmiento 239", "Nombre": "Camio Mar\u00eda Melisa\u00a0"}, "type": "Feature"}, {"bbox": [-59.18220979999781, -37.305688400661836, -59.18220979999781, -37.305688400661836], "geometry": {"coordinates": [-59.18220979999781, -37.305688400661836, 0.0], "type": "Point"}, "id": "2", "properties": {"Direcci\u00f3n": "Salta 2368", "Nombre": "Lasala Mar\u00eda Silvia\u00a0"}, "type": "Feature"}, {"bbox": [-59.10840939999762, -37.30585210066184, -59.10840939999762, -37.30585210066184], "geometry": {"coordinates": [-59.10840939999762, -37.30585210066184, 0.0], "type": "Point"}, "id": "3", "properties": {"Direcci\u00f3n": "Mu\u00f1iz 1070", "Nombre": "Jentile Romina\u00a0"}, "type": "Feature"}, {"bbox": [-59.16821799999777, -37.32426180066172, -59.16821799999777, -37.32426180066172], "geometry": {"coordinates": [-59.16821799999777, -37.32426180066172, 0.0], "type": "Point"}, "id": "4", "properties": {"Direcci\u00f3n": "Pav\u00f3n 1730", "Nombre": "Di Candilo Eugenia"}, "type": "Feature"}, {"bbox": [-59.14211209999771, -37.342049900661614, -59.14211209999771, -37.342049900661614], "geometry": {"coordinates": [-59.14211209999771, -37.342049900661614, 0.0], "type": "Point"}, "id": "5", "properties": {"Direcci\u00f3n": "Potrerillos \t356", "Nombre": "Patricia Daniela Garc\u00eda\u00a0"}, "type": "Feature"}, {"bbox": [-59.13886689999768, -37.302886500661856, -59.13886689999768, -37.302886500661856], "geometry": {"coordinates": [-59.13886689999768, -37.302886500661856, 0.0], "type": "Point"}, "id": "6", "properties": {"Direcci\u00f3n": "Beir\u00f3 667", "Nombre": "Danieli Chiara"}, "type": "Feature"}, {"bbox": [-59.152640299997735, -37.29106310066194, -59.152640299997735, -37.29106310066194], "geometry": {"coordinates": [-59.152640299997735, -37.29106310066194, 0.0], "type": "Point"}, "id": "7", "properties": {"Direcci\u00f3n": "La Pampa 876", "Nombre": "Caselli, Mar\u00eda Amalia"}, "type": "Feature"}, {"bbox": [-59.1745825999978, -37.30009690066186, -59.1745825999978, -37.30009690066186], "geometry": {"coordinates": [-59.1745825999978, -37.30009690066186, 0.0], "type": "Point"}, "id": "8", "properties": {"Direcci\u00f3n": "Navarro 470", "Nombre": "Guerrero Isabel Julia"}, "type": "Feature"}, {"bbox": [-59.12236169999764, -37.32565440066171, -59.12236169999764, -37.32565440066171], "geometry": {"coordinates": [-59.12236169999764, -37.32565440066171, 0.0], "type": "Point"}, "id": "9", "properties": {"Direcci\u00f3n": "Maip\u00fa 1401", "Nombre": "Bas Sim\u00f3n, Roger"}, "type": "Feature"}, {"bbox": [-59.13509039999767, -37.33624200066163, -59.13509039999767, -37.33624200066163], "geometry": {"coordinates": [-59.13509039999767, -37.33624200066163, 0.0], "type": "Point"}, "id": "10", "properties": {"Direcci\u00f3n": "Juncal 333", "Nombre": "Ver\u00f3nica Rinaldi\u00a0"}, "type": "Feature"}, {"bbox": [-59.11594259999763, -37.32451870066173, -59.11594259999763, -37.32451870066173], "geometry": {"coordinates": [-59.11594259999763, -37.32451870066173, 0.0], "type": "Point"}, "id": "11", "properties": {"Direcci\u00f3n": "25 de Mayo 2069", "Nombre": "Go\u00f1i Paola Alejandra\u00a0"}, "type": "Feature"}, {"bbox": [-59.152438099997724, -37.29628870066188, -59.152438099997724, -37.29628870066188], "geometry": {"coordinates": [-59.152438099997724, -37.29628870066188, 0.0], "type": "Point"}, "id": "12", "properties": {"Direcci\u00f3n": "Marzocca\u00a0524", "Nombre": "Contreras Victoria"}, "type": "Feature"}, {"bbox": [-59.14361509999771, -37.329421100661676, -59.14361509999771, -37.329421100661676], "geometry": {"coordinates": [-59.14361509999771, -37.329421100661676, 0.0], "type": "Point"}, "id": "13", "properties": {"Direcci\u00f3n": "Alberdi 572", "Nombre": "Julieta Zarzabal\u00a0"}, "type": "Feature"}, {"bbox": [-59.145690399997704, -37.30444040066183, -59.145690399997704, -37.30444040066183], "geometry": {"coordinates": [-59.145690399997704, -37.30444040066183, 0.0], "type": "Point"}, "id": "14", "properties": {"Direcci\u00f3n": "Lavalle 433", "Nombre": "Granato valeria"}, "type": "Feature"}, {"bbox": [-59.12581539999766, -37.31423420066179, -59.12581539999766, -37.31423420066179], "geometry": {"coordinates": [-59.12581539999766, -37.31423420066179, 0.0], "type": "Point"}, "id": "15", "properties": {"Direcci\u00f3n": "Moreno 1142 dpto 2", "Nombre": "Marino Florencia Andrea"}, "type": "Feature"}, {"bbox": [-59.17320029999778, -37.307518100661824, -59.17320029999778, -37.307518100661824], "geometry": {"coordinates": [-59.17320029999778, -37.307518100661824, 0.0], "type": "Point"}, "id": "16", "properties": {"Direcci\u00f3n": "Chubut 1940", "Nombre": "Sandra Peralta\u00a0"}, "type": "Feature"}, {"bbox": [-59.12783379999766, -37.338623900661624, -59.12783379999766, -37.338623900661624], "geometry": {"coordinates": [-59.12783379999766, -37.338623900661624, 0.0], "type": "Point"}, "id": "17", "properties": {"Direcci\u00f3n": "Richieri 471", "Nombre": "Maria Sol Montes"}, "type": "Feature"}, {"bbox": [-59.13197489999767, -37.31842090066175, -59.13197489999767, -37.31842090066175], "geometry": {"coordinates": [-59.13197489999767, -37.31842090066175, 0.0], "type": "Point"}, "id": "18", "properties": {"Direcci\u00f3n": "4 de Abril 1015", "Nombre": "Sebasti\u00e1n Mart\u00edn Gonz\u00e1lez\u00a0"}, "type": "Feature"}, {"bbox": [-59.1387248999977, -37.32699810066169, -59.1387248999977, -37.32699810066169], "geometry": {"coordinates": [-59.1387248999977, -37.32699810066169, 0.0], "type": "Point"}, "id": "19", "properties": {"Direcci\u00f3n": "San Mart\u00edn 454", "Nombre": "Martina Yaquinta\u00a0"}, "type": "Feature"}, {"bbox": [-59.14180689999769, -37.32968360066171, -59.14180689999769, -37.32968360066171], "geometry": {"coordinates": [-59.14180689999769, -37.32968360066171, 0.0], "type": "Point"}, "id": "20", "properties": {"Direcci\u00f3n": "Pinto 181", "Nombre": "Lorena cecilia v\u00e1zquez\u00a0"}, "type": "Feature"}, {"bbox": [-59.14594079999772, -37.31025790066181, -59.14594079999772, -37.31025790066181], "geometry": {"coordinates": [-59.14594079999772, -37.31025790066181, 0.0], "type": "Point"}, "id": "21", "properties": {"Direcci\u00f3n": "Sta. Fe 595", "Nombre": "Garcia Pereira Rocio"}, "type": "Feature"}, {"bbox": [-59.124873499997655, -37.319073100661754, -59.124873499997655, -37.319073100661754], "geometry": {"coordinates": [-59.124873499997655, -37.319073100661754, 0.0], "type": "Point"}, "id": "22", "properties": {"Direcci\u00f3n": "Mitre 1483", "Nombre": "Mansilla Florencia\u00a0"}, "type": "Feature"}, {"bbox": [-59.17521539999778, -37.30850160066183, -59.17521539999778, -37.30850160066183], "geometry": {"coordinates": [-59.17521539999778, -37.30850160066183, 0.0], "type": "Point"}, "id": "23", "properties": {"Direcci\u00f3n": "Los Lirios 2015", "Nombre": "Suarez Nora"}, "type": "Feature"}, {"bbox": [-59.15892119999775, -37.33191040066165, -59.15892119999775, -37.33191040066165], "geometry": {"coordinates": [-59.15892119999775, -37.33191040066165, 0.0], "type": "Point"}, "id": "24", "properties": {"Direcci\u00f3n": "Paraguay 964", "Nombre": "Volpatti nancy"}, "type": "Feature"}, {"bbox": [-59.125277099997646, -37.291399800661935, -59.125277099997646, -37.291399800661935], "geometry": {"coordinates": [-59.125277099997646, -37.291399800661935, 0.0], "type": "Point"}, "id": "25", "properties": {"Direcci\u00f3n": "Pasteur 2039", "Nombre": "Ugarte coronel silvina noemi"}, "type": "Feature"}, {"bbox": [-59.12133019999766, -37.32266960066172, -59.12133019999766, -37.32266960066172], "geometry": {"coordinates": [-59.12133019999766, -37.32266960066172, 0.0], "type": "Point"}, "id": "26", "properties": {"Direcci\u00f3n": "Moreno 460", "Nombre": "Mercedes Mosqueda\u00a0"}, "type": "Feature"}, {"bbox": [-59.10772559999759, -37.32229080066173, -59.10772559999759, -37.32229080066173], "geometry": {"coordinates": [-59.10772559999759, -37.32229080066173, 0.0], "type": "Point"}, "id": "27", "properties": {"Direcci\u00f3n": "Pasaje Jos\u00e9 Barrientos\u00a01022", "Nombre": "Handel Paula"}, "type": "Feature"}, {"bbox": [-59.14270189999771, -37.32793350066172, -59.14270189999771, -37.32793350066172], "geometry": {"coordinates": [-59.14270189999771, -37.32793350066172, 0.0], "type": "Point"}, "id": "28", "properties": {"Direcci\u00f3n": "San Lorenzo 652", "Nombre": "Florencia Lecumberri"}, "type": "Feature"}, {"bbox": [-59.17021559999777, -37.32221280066173, -59.17021559999777, -37.32221280066173], "geometry": {"coordinates": [-59.17021559999777, -37.32221280066173, 0.0], "type": "Point"}, "id": "29", "properties": {"Direcci\u00f3n": "Kramer\u00a01866", "Nombre": "Elena Sagra Moso"}, "type": "Feature"}, {"bbox": [-59.124152899997654, -37.32293080066172, -59.124152899997654, -37.32293080066172], "geometry": {"coordinates": [-59.124152899997654, -37.32293080066172, 0.0], "type": "Point"}, "id": "30", "properties": {"Direcci\u00f3n": "11 de Septiembre 506", "Nombre": "Abete Susana\u00a0"}, "type": "Feature"}, {"bbox": [-59.14437569999772, -37.32127230066174, -59.14437569999772, -37.32127230066174], "geometry": {"coordinates": [-59.14437569999772, -37.32127230066174, 0.0], "type": "Point"}, "id": "31", "properties": {"Direcci\u00f3n": "14 de Julio 1149", "Nombre": "Arabi Daniela\u00a0"}, "type": "Feature"}, {"bbox": [-59.135075499997676, -37.33022610066169, -59.135075499997676, -37.33022610066169], "geometry": {"coordinates": [-59.135075499997676, -37.33022610066169, 0.0], "type": "Point"}, "id": "32", "properties": {"Direcci\u00f3n": "Maip\u00fa 562", "Nombre": "Sandra Damoni"}, "type": "Feature"}, {"bbox": [-59.121351899997634, -37.337368700661635, -59.121351899997634, -37.337368700661635], "geometry": {"coordinates": [-59.121351899997634, -37.337368700661635, 0.0], "type": "Point"}, "id": "33", "properties": {"Direcci\u00f3n": "Ruben Dario 545", "Nombre": "Ailen Rodriguez"}, "type": "Feature"}, {"bbox": [-59.09990439999759, -37.324957800661714, -59.09990439999759, -37.324957800661714], "geometry": {"coordinates": [-59.09990439999759, -37.324957800661714, 0.0], "type": "Point"}, "id": "34", "properties": {"Direcci\u00f3n": "Massini 325", "Nombre": "Gopar Mariano"}, "type": "Feature"}, {"bbox": [-59.12319309999765, -37.30375220066183, -59.12319309999765, -37.30375220066183], "geometry": {"coordinates": [-59.12319309999765, -37.30375220066183, 0.0], "type": "Point"}, "id": "35", "properties": {"Direcci\u00f3n": "G\u00fcemes Nte. 1404", "Nombre": "Maria Belen Jara"}, "type": "Feature"}, {"bbox": [-59.12847849999767, -37.3123471006618, -59.12847849999767, -37.3123471006618], "geometry": {"coordinates": [-59.12847849999767, -37.3123471006618, 0.0], "type": "Point"}, "id": "36", "properties": {"Direcci\u00f3n": "Montiel 1347", "Nombre": "Julieta Suarez"}, "type": "Feature"}, {"bbox": [-59.127699199997664, -37.31663220066176, -59.127699199997664, -37.31663220066176], "geometry": {"coordinates": [-59.127699199997664, -37.31663220066176, 0.0], "type": "Point"}, "id": "37", "properties": {"Direcci\u00f3n": "11 de Septiembre 1029", "Nombre": "Rocio Palacio\u00a0"}, "type": "Feature"}, {"bbox": [-59.12648819999766, -37.3268061006617, -59.12648819999766, -37.3268061006617], "geometry": {"coordinates": [-59.12648819999766, -37.3268061006617, 0.0], "type": "Point"}, "id": "38", "properties": {"Direcci\u00f3n": "Maip\u00fa 1148", "Nombre": "Palacio Sabrina"}, "type": "Feature"}, {"bbox": [-59.1429390999977, -37.32156300066174, -59.1429390999977, -37.32156300066174], "geometry": {"coordinates": [-59.1429390999977, -37.32156300066174, 0.0], "type": "Point"}, "id": "39", "properties": {"Direcci\u00f3n": "Chacabuco 1098", "Nombre": "Olga Bravo\u00a0"}, "type": "Feature"}, {"bbox": [-59.14381979999773, -37.3257709006617, -59.14381979999773, -37.3257709006617], "geometry": {"coordinates": [-59.14381979999773, -37.3257709006617, 0.0], "type": "Point"}, "id": "40", "properties": {"Direcci\u00f3n": "San Lorenzo 826", "Nombre": "Nu\u00f1es Maria Agustina\u00a0"}, "type": "Feature"}, {"bbox": [-59.152438099997724, -37.29628870066188, -59.152438099997724, -37.29628870066188], "geometry": {"coordinates": [-59.152438099997724, -37.29628870066188, 0.0], "type": "Point"}, "id": "41", "properties": {"Direcci\u00f3n": "Marzocca\u00a0440", "Nombre": "Marisel Natalia Pi"}, "type": "Feature"}, {"bbox": [-59.15031499999772, -37.34049160066163, -59.15031499999772, -37.34049160066163], "geometry": {"coordinates": [-59.15031499999772, -37.34049160066163, 0.0], "type": "Point"}, "id": "42", "properties": {"Direcci\u00f3n": "Av. Estrada 661", "Nombre": "Bichi Maria Laura\u00a0"}, "type": "Feature"}, {"bbox": [-59.151137999997744, -37.319940100661746, -59.151137999997744, -37.319940100661746], "geometry": {"coordinates": [-59.151137999997744, -37.319940100661746, 0.0], "type": "Point"}, "id": "43", "properties": {"Direcci\u00f3n": "Gral. Arenales 19", "Nombre": "Rodriguez vazquez Victoria\u00a0"}, "type": "Feature"}, {"bbox": [-59.171265199997784, -37.29257540066192, -59.171265199997784, -37.29257540066192], "geometry": {"coordinates": [-59.171265199997784, -37.29257540066192, 0.0], "type": "Point"}, "id": "44", "properties": {"Direcci\u00f3n": "Figueroa 2581", "Nombre": "Garzon Gabriela"}, "type": "Feature"}, {"bbox": [-59.13463499999768, -37.31794600066177, -59.13463499999768, -37.31794600066177], "geometry": {"coordinates": [-59.13463499999768, -37.31794600066177, 0.0], "type": "Point"}, "id": "45", "properties": {"Direcci\u00f3n": "Colon \t1112", "Nombre": "Bollea Lucia\u00a0"}, "type": "Feature"}, {"bbox": [-59.1385648999977, -37.323359700661726, -59.1385648999977, -37.323359700661726], "geometry": {"coordinates": [-59.1385648999977, -37.323359700661726, 0.0], "type": "Point"}, "id": "46", "properties": {"Direcci\u00f3n": "Gral. Rodr\u00edguez 870", "Nombre": "Paula Van De Walle"}, "type": "Feature"}, {"bbox": [-59.14531669999769, -37.32291030066173, -59.14531669999769, -37.32291030066173], "geometry": {"coordinates": [-59.14531669999769, -37.32291030066173, 0.0], "type": "Point"}, "id": "47", "properties": {"Direcci\u00f3n": "San Lorenzo 1057", "Nombre": "Michele Dalera"}, "type": "Feature"}, {"bbox": [-59.13192159999768, -37.33180460066168, -59.13192159999768, -37.33180460066168], "geometry": {"coordinates": [-59.13192159999768, -37.33180460066168, 0.0], "type": "Point"}, "id": "48", "properties": {"Direcci\u00f3n": "9 de Julio 112", "Nombre": "Viviana Alvarez"}, "type": "Feature"}, {"bbox": [-59.118122099997635, -37.3103254006618, -59.118122099997635, -37.3103254006618], "geometry": {"coordinates": [-59.118122099997635, -37.3103254006618, 0.0], "type": "Point"}, "id": "49", "properties": {"Direcci\u00f3n": "Piedrabuena 1259", "Nombre": "Andrea Cervetto"}, "type": "Feature"}, {"bbox": [-59.12283069999765, -37.29738750066188, -59.12283069999765, -37.29738750066188], "geometry": {"coordinates": [-59.12283069999765, -37.29738750066188, 0.0], "type": "Point"}, "id": "50", "properties": {"Direcci\u00f3n": "Labard\u00e9n 2163", "Nombre": "Jazmin Vulcano"}, "type": "Feature"}, {"bbox": [-59.127430099997675, -37.318182400661755, -59.127430099997675, -37.318182400661755], "geometry": {"coordinates": [-59.127430099997675, -37.318182400661755, 0.0], "type": "Point"}, "id": "51", "properties": {"Direcci\u00f3n": "Av. Marconi 1388", "Nombre": "Piros Mendonza Paula"}, "type": "Feature"}, {"bbox": [-59.106516699997606, -37.32213200066174, -59.106516699997606, -37.32213200066174], "geometry": {"coordinates": [-59.106516699997606, -37.32213200066174, 0.0], "type": "Point"}, "id": "52", "properties": {"Direcci\u00f3n": "Franklin 106", "Nombre": "Patricia Graciela Nicolas\u00a0"}, "type": "Feature"}, {"bbox": [-59.15341529999772, -37.31805490066177, -59.15341529999772, -37.31805490066177], "geometry": {"coordinates": [-59.15341529999772, -37.31805490066177, 0.0], "type": "Point"}, "id": "53", "properties": {"Direcci\u00f3n": "Av. Juramento 1605", "Nombre": "Romay Sandra"}, "type": "Feature"}, {"bbox": [-59.144638099997714, -37.32808790066171, -59.144638099997714, -37.32808790066171], "geometry": {"coordinates": [-59.144638099997714, -37.32808790066171, 0.0], "type": "Point"}, "id": "54", "properties": {"Direcci\u00f3n": "Sarmiento 65", "Nombre": "Nelida Garcia"}, "type": "Feature"}, {"bbox": [-59.16900579999778, -37.32495080066172, -59.16900579999778, -37.32495080066172], "geometry": {"coordinates": [-59.16900579999778, -37.32495080066172, 0.0], "type": "Point"}, "id": "55", "properties": {"Direcci\u00f3n": "Martineta\u00a02765", "Nombre": "Astrillo Natalia\u00a0"}, "type": "Feature"}, {"bbox": [-59.12904479999768, -37.335907600661656, -59.12904479999768, -37.335907600661656], "geometry": {"coordinates": [-59.12904479999768, -37.335907600661656, 0.0], "type": "Point"}, "id": "56", "properties": {"Direcci\u00f3n": "Richieri 234", "Nombre": "Elinda Vega Riza"}, "type": "Feature"}, {"bbox": [-59.119094499997644, -37.29710940066189, -59.119094499997644, -37.29710940066189], "geometry": {"coordinates": [-59.119094499997644, -37.29710940066189, 0.0], "type": "Point"}, "id": "57", "properties": {"Direcci\u00f3n": "Mu\u00f1iz 2018", "Nombre": "Peralta Veronica\u00a0"}, "type": "Feature"}, {"bbox": [-59.12295219999766, -37.29383090066191, -59.12295219999766, -37.29383090066191], "geometry": {"coordinates": [-59.12295219999766, -37.29383090066191, 0.0], "type": "Point"}, "id": "58", "properties": {"Direcci\u00f3n": "Mu\u00f1iz 2362", "Nombre": "Maria Cecilia Duarte\u00a0"}, "type": "Feature"}, {"bbox": [-59.11431299999764, -37.2934340006619, -59.11431299999764, -37.2934340006619], "geometry": {"coordinates": [-59.11431299999764, -37.2934340006619, 0.0], "type": "Point"}, "id": "59", "properties": {"Direcci\u00f3n": "Ijurco 2551", "Nombre": "Elvira Gatti"}, "type": "Feature"}, {"bbox": [-59.11815609999762, -37.29795250066189, -59.11815609999762, -37.29795250066189], "geometry": {"coordinates": [-59.11815609999762, -37.29795250066189, 0.0], "type": "Point"}, "id": "60", "properties": {"Direcci\u00f3n": "Mu\u00f1iz 1930", "Nombre": "Marta Reta\u00a0"}, "type": "Feature"}, {"bbox": [-59.12025839999762, -37.31346430066179, -59.12025839999762, -37.31346430066179], "geometry": {"coordinates": [-59.12025839999762, -37.31346430066179, 0.0], "type": "Point"}, "id": "61", "properties": {"Direcci\u00f3n": "Cuba 1045", "Nombre": "Toba\u00f1o Norma"}, "type": "Feature"}, {"bbox": [-59.11851339999764, -37.298480800661885, -59.11851339999764, -37.298480800661885], "geometry": {"coordinates": [-59.11851339999764, -37.298480800661885, 0.0], "type": "Point"}, "id": "62", "properties": {"Direcci\u00f3n": "Ju\u00e1rez 1950", "Nombre": "Patricia Monica Montero"}, "type": "Feature"}, {"bbox": [-59.11654329999762, -37.29362440066192, -59.11654329999762, -37.29362440066192], "geometry": {"coordinates": [-59.11654329999762, -37.29362440066192, 0.0], "type": "Point"}, "id": "63", "properties": {"Direcci\u00f3n": "Nigro 2295", "Nombre": "Orozco Melisa"}, "type": "Feature"}, {"bbox": [-59.12453399999766, -37.29045590066195, -59.12453399999766, -37.29045590066195], "geometry": {"coordinates": [-59.12453399999766, -37.29045590066195, 0.0], "type": "Point"}, "id": "64", "properties": {"Direcci\u00f3n": "Pasteur 2122", "Nombre": "Maria Morteo"}, "type": "Feature"}, {"bbox": [-59.12538229999766, -37.300833100661855, -59.12538229999766, -37.300833100661855], "geometry": {"coordinates": [-59.12538229999766, -37.300833100661855, 0.0], "type": "Point"}, "id": "65", "properties": {"Direcci\u00f3n": "Nigro 1511", "Nombre": "Camila Pellizzari"}, "type": "Feature"}, {"bbox": [-59.113720399997604, -37.30929860066181, -59.113720399997604, -37.30929860066181], "geometry": {"coordinates": [-59.113720399997604, -37.30929860066181, 0.0], "type": "Point"}, "id": "66", "properties": {"Direcci\u00f3n": "Newton 1562", "Nombre": "Martina Codo Medina"}, "type": "Feature"}, {"bbox": [-59.11938719999763, -37.29965250066188, -59.11938719999763, -37.29965250066188], "geometry": {"coordinates": [-59.11938719999763, -37.29965250066188, 0.0], "type": "Point"}, "id": "67", "properties": {"Direcci\u00f3n": "Ju\u00e1rez 1839", "Nombre": "Cristian Pioli"}, "type": "Feature"}, {"bbox": [-59.177111999997784, -37.3104881006618, -59.177111999997784, -37.3104881006618], "geometry": {"coordinates": [-59.177111999997784, -37.3104881006618, 0.0], "type": "Point"}, "id": "68", "properties": {"Direcci\u00f3n": "Los Jazmines 1830", "Nombre": "Maria Eugenia Casas"}, "type": "Feature"}, {"bbox": [-59.18220979999781, -37.305688400661836, -59.18220979999781, -37.305688400661836], "geometry": {"coordinates": [-59.18220979999781, -37.305688400661836, 0.0], "type": "Point"}, "id": "69", "properties": {"Direcci\u00f3n": "Salta 2368", "Nombre": "Lasala Mar\u00eda Silvia\u00a0"}, "type": "Feature"}, {"bbox": [-59.17932499999781, -37.31429750066178, -59.17932499999781, -37.31429750066178], "geometry": {"coordinates": [-59.17932499999781, -37.31429750066178, 0.0], "type": "Point"}, "id": "70", "properties": {"Direcci\u00f3n": "Los Pensamientos 1807", "Nombre": "Maura D alesandro"}, "type": "Feature"}, {"bbox": [-59.1759310999978, -37.3088037006618, -59.1759310999978, -37.3088037006618], "geometry": {"coordinates": [-59.1759310999978, -37.3088037006618, 0.0], "type": "Point"}, "id": "71", "properties": {"Direcci\u00f3n": "Formosa 1916", "Nombre": "Romero Lujan Anahi"}, "type": "Feature"}, {"bbox": [-59.17714279999779, -37.307843000661826, -59.17714279999779, -37.307843000661826], "geometry": {"coordinates": [-59.17714279999779, -37.307843000661826, 0.0], "type": "Point"}, "id": "72", "properties": {"Direcci\u00f3n": "Formosa 2056", "Nombre": "Alegre Cintia\u00a0"}, "type": "Feature"}, {"bbox": [-59.1750736999978, -37.30838840066181, -59.1750736999978, -37.30838840066181], "geometry": {"coordinates": [-59.1750736999978, -37.30838840066181, 0.0], "type": "Point"}, "id": "73", "properties": {"Direcci\u00f3n": "Los Lirios 1970", "Nombre": "Casal Maria Elisa"}, "type": "Feature"}, {"bbox": [-59.179960499997804, -37.3102717006618, -59.179960499997804, -37.3102717006618], "geometry": {"coordinates": [-59.179960499997804, -37.3102717006618, 0.0], "type": "Point"}, "id": "74", "properties": {"Direcci\u00f3n": "Los Crisantemos 2005", "Nombre": "Maria Cecilia Cortijo"}, "type": "Feature"}, {"bbox": [-59.163476899997754, -37.32490090066171, -59.163476899997754, -37.32490090066171], "geometry": {"coordinates": [-59.163476899997754, -37.32490090066171, 0.0], "type": "Point"}, "id": "75", "properties": {"Direcci\u00f3n": "Pierrone 1450", "Nombre": "Celeste Guastalino\u00a0"}, "type": "Feature"}, {"bbox": [-59.14217379999769, -37.29354190066192, -59.14217379999769, -37.29354190066192], "geometry": {"coordinates": [-59.14217379999769, -37.29354190066192, 0.0], "type": "Point"}, "id": "76", "properties": {"Direcci\u00f3n": "Av. Pujol 1188", "Nombre": "Natalia Ambatese"}, "type": "Feature"}, {"bbox": [-59.134790099997666, -37.31797080066175, -59.134790099997666, -37.31797080066175], "geometry": {"coordinates": [-59.134790099997666, -37.31797080066175, 0.0], "type": "Point"}, "id": "77", "properties": {"Direcci\u00f3n": "Las Heras 988", "Nombre": "Elisa Esther de Rosa"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_6f4a9a449c8fa8990dba15f70ece139e.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Nombre", "Direcci\u00f3n"];
+    let aliases = ["Nombre", "Direcci\u00f3n"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+</script>
+</html>

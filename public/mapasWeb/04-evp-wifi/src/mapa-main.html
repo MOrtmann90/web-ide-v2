@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_45d5624ae78856697b4394dd0831c3dd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_45d5624ae78856697b4394dd0831c3dd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_45d5624ae78856697b4394dd0831c3dd = L.map(
+                "map_45d5624ae78856697b4394dd0831c3dd",
+                {
+                    center: [-37.30737408627981, -59.15795551407296],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_45d5624ae78856697b4394dd0831c3dd);
+
+            
+
+        
+    
+            var tile_layer_bd1b04cd57cdde68bcd61516ffd1599a = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_45d5624ae78856697b4394dd0831c3dd);
+        
+    
+            map_45d5624ae78856697b4394dd0831c3dd.fitBounds(
+                [[-37.48741357653045, -59.507658864438355], [-37.12733459602916, -58.808252163707564]],
+                {}
+            );
+        
+    
+        function geo_json_bb5e35c95334d20175eed11e6154ae50_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#000000", "fillColor": "#00BB2D", "fillOpacity": 0.85, "opacity": 1, "stroke": true, "weight": 1};
+            }
+        }
+        function geo_json_bb5e35c95334d20175eed11e6154ae50_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_bb5e35c95334d20175eed11e6154ae50_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": "8", "stroke": true, "weight": 3};
+            
+            let style = geo_json_bb5e35c95334d20175eed11e6154ae50_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_bb5e35c95334d20175eed11e6154ae50_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_bb5e35c95334d20175eed11e6154ae50.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_bb5e35c95334d20175eed11e6154ae50_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_bb5e35c95334d20175eed11e6154ae50 = L.geoJson(null, {
+                onEachFeature: geo_json_bb5e35c95334d20175eed11e6154ae50_onEachFeature,
+            
+                style: geo_json_bb5e35c95334d20175eed11e6154ae50_styler,
+                pointToLayer: geo_json_bb5e35c95334d20175eed11e6154ae50_pointToLayer
+        });
+
+        function geo_json_bb5e35c95334d20175eed11e6154ae50_add (data) {
+            geo_json_bb5e35c95334d20175eed11e6154ae50
+                .addData(data)
+                .addTo(map_45d5624ae78856697b4394dd0831c3dd);
+        }
+            geo_json_bb5e35c95334d20175eed11e6154ae50_add({"bbox": [-59.507658864438355, -37.48741357653045, -58.808252163707564, -37.12733459602916], "features": [{"bbox": [-59.155073486144595, -37.31902811327205, -59.155073486144595, -37.31902811327205], "geometry": {"coordinates": [-59.155073486144595, -37.31902811327205], "type": "Point"}, "id": "0", "properties": {"Espacio verde": "PLAZA GRAL BELGRANO (EX PLAZA EVA PERON)", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.11635237185188, -37.32007960866714, -59.11635237185188, -37.32007960866714], "geometry": {"coordinates": [-59.11635237185188, -37.32007960866714], "type": "Point"}, "id": "1", "properties": {"Espacio verde": "PLAZA HEROES DEL ATLANTICO", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.13096737578252, -37.32199364468308, -59.13096737578252, -37.32199364468308], "geometry": {"coordinates": [-59.13096737578252, -37.32199364468308], "type": "Point"}, "id": "2", "properties": {"Espacio verde": "PLAZA MARTIN RODRIGUEZ", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.13597150606773, -37.33421649442495, -59.13597150606773, -37.33421649442495], "geometry": {"coordinates": [-59.13597150606773, -37.33421649442495], "type": "Point"}, "id": "3", "properties": {"Espacio verde": "PLAZA MORENO", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.11790227825539, -37.29335140675848, -59.11790227825539, -37.29335140675848], "geometry": {"coordinates": [-59.11790227825539, -37.29335140675848], "type": "Point"}, "id": "4", "properties": {"Espacio verde": "PLAZA EJERCITO ARGENTINO", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.107224303797274, -37.307171158699695, -59.107224303797274, -37.307171158699695], "geometry": {"coordinates": [-59.107224303797274, -37.307171158699695], "type": "Point"}, "id": "5", "properties": {"Espacio verde": "PLAZA OSCAR ALENDE", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.13641687000412, -37.34105044991064, -59.13641687000412, -37.34105044991064], "geometry": {"coordinates": [-59.13641687000412, -37.34105044991064], "type": "Point"}, "id": "6", "properties": {"Espacio verde": "PASEO PARQUE INDEPENDENCIA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.134125083044026, -37.32610005587607, -59.134125083044026, -37.32610005587607], "geometry": {"coordinates": [-59.134125083044026, -37.32610005587607], "type": "Point"}, "id": "7", "properties": {"Espacio verde": "PLAZA DE LAS ARTES", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.11662964145513, -37.31428005705825, -59.11662964145513, -37.31428005705825], "geometry": {"coordinates": [-59.11662964145513, -37.31428005705825], "type": "Point"}, "id": "8", "properties": {"Espacio verde": "PLAZOLETA DEL AUTOMOVILISMO TANDILENSE", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.507658864438355, -37.401048130467, -59.507658864438355, -37.401048130467], "geometry": {"coordinates": [-59.507658864438355, -37.401048130467], "type": "Point"}, "id": "9", "properties": {"Espacio verde": "BOULEVARD VELA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.128093838504796, -37.34315578980348, -59.128093838504796, -37.34315578980348], "geometry": {"coordinates": [-59.128093838504796, -37.34315578980348], "type": "Point"}, "id": "10", "properties": {"Espacio verde": "PARQUE DE LA INDUSTRIA Y EL COMERCIO", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.13685716715227, -37.32867331716458, -59.13685716715227, -37.32867331716458], "geometry": {"coordinates": [-59.13685716715227, -37.32867331716458], "type": "Point"}, "id": "11", "properties": {"Espacio verde": "PLAZA INDEPENDENCIA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.15151443746735, -37.29761368471974, -59.15151443746735, -37.29761368471974], "geometry": {"coordinates": [-59.15151443746735, -37.29761368471974], "type": "Point"}, "id": "12", "properties": {"Espacio verde": "PLAZA BARRIO PROCREAR", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.15023316236699, -37.29602165803125, -59.15023316236699, -37.29602165803125], "geometry": {"coordinates": [-59.15023316236699, -37.29602165803125], "type": "Point"}, "id": "13", "properties": {"Espacio verde": "PLAZA BARRIO PROCREAR", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.13319918702181, -37.350247058446165, -59.13319918702181, -37.350247058446165], "geometry": {"coordinates": [-59.13319918702181, -37.350247058446165], "type": "Point"}, "id": "14", "properties": {"Espacio verde": "PASEO DE LOS ESPA\u00d1OLES", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.502059992154415, -37.399772822788066, -59.502059992154415, -37.399772822788066], "geometry": {"coordinates": [-59.502059992154415, -37.399772822788066], "type": "Point"}, "id": "15", "properties": {"Espacio verde": "NUEVA PLAZA DE VELA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.147556249459, -37.32681891823126, -59.147556249459, -37.32681891823126], "geometry": {"coordinates": [-59.147556249459, -37.32681891823126], "type": "Point"}, "id": "16", "properties": {"Espacio verde": "PLAZA SAN MARTIN", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.157402246386454, -37.29057139597671, -59.157402246386454, -37.29057139597671], "geometry": {"coordinates": [-59.157402246386454, -37.29057139597671], "type": "Point"}, "id": "17", "properties": {"Espacio verde": "PLAZOLETA B\u00b0 ARCO IRIS I", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.145197363787275, -37.31330816896653, -59.145197363787275, -37.31330816896653], "geometry": {"coordinates": [-59.145197363787275, -37.31330816896653], "type": "Point"}, "id": "18", "properties": {"Espacio verde": "PLAZOLETA DE LA INDUSTRIA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.166049709314706, -37.30177595469983, -59.166049709314706, -37.30177595469983], "geometry": {"coordinates": [-59.166049709314706, -37.30177595469983], "type": "Point"}, "id": "19", "properties": {"Espacio verde": "PLAZOLETA MAGIORI", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.17190468988998, -37.30746338630277, -59.17190468988998, -37.30746338630277], "geometry": {"coordinates": [-59.17190468988998, -37.30746338630277], "type": "Point"}, "id": "20", "properties": {"Espacio verde": "POLIDEPORTIVO CIC LA MOVEDIZA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.17790209310291, -37.31087841344995, -59.17790209310291, -37.31087841344995], "geometry": {"coordinates": [-59.17790209310291, -37.31087841344995], "type": "Point"}, "id": "21", "properties": {"Espacio verde": "PLAZOLETA P. DE LOS NI\u00d1OS / IRAOLA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.15747435007646, -37.33142585062396, -59.15747435007646, -37.33142585062396], "geometry": {"coordinates": [-59.15747435007646, -37.33142585062396], "type": "Point"}, "id": "22", "properties": {"Espacio verde": "ESPACIO RECREATIVO VILLA CORDOVITA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.20445487746936, -37.3161573922365, -59.20445487746936, -37.3161573922365], "geometry": {"coordinates": [-59.20445487746936, -37.3161573922365], "type": "Point"}, "id": "23", "properties": {"Espacio verde": "CERRO LEONES", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.11336300980181, -37.33578383148692, -59.11336300980181, -37.33578383148692], "geometry": {"coordinates": [-59.11336300980181, -37.33578383148692], "type": "Point"}, "id": "24", "properties": {"Espacio verde": "PARQUE DEL ORIGEN", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.3630998515204, -37.2798759224229, -59.3630998515204, -37.2798759224229], "geometry": {"coordinates": [-59.3630998515204, -37.2798759224229], "type": "Point"}, "id": "25", "properties": {"Espacio verde": "PLAZA SAN MARTIN", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-58.9157515115156, -37.25212607555971, -58.9157515115156, -37.25212607555971], "geometry": {"coordinates": [-58.9157515115156, -37.25212607555971], "type": "Point"}, "id": "26", "properties": {"Espacio verde": "IRAOLA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-58.808252163707564, -37.41613320331511, -58.808252163707564, -37.41613320331511], "geometry": {"coordinates": [-58.808252163707564, -37.41613320331511], "type": "Point"}, "id": "27", "properties": {"Espacio verde": "ESTACION FULTON", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.29128625365945, -37.48741357653045, -59.29128625365945, -37.48741357653045], "geometry": {"coordinates": [-59.29128625365945, -37.48741357653045], "type": "Point"}, "id": "28", "properties": {"Espacio verde": "AZUCENA", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.11492065759658, -37.37711433975827, -59.11492065759658, -37.37711433975827], "geometry": {"coordinates": [-59.11492065759658, -37.37711433975827], "type": "Point"}, "id": "29", "properties": {"Espacio verde": "CRISTO EN LAS SIERRAS", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.12842505084541, -37.34214315952728, -59.12842505084541, -37.34214315952728], "geometry": {"coordinates": [-59.12842505084541, -37.34214315952728], "type": "Point"}, "id": "30", "properties": {"Espacio verde": "PARQUE DE LA INDUSTRIA Y EL COMERCIO", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-58.81082490127534, -37.41452334613343, -58.81082490127534, -37.41452334613343], "geometry": {"coordinates": [-58.81082490127534, -37.41452334613343], "type": "Point"}, "id": "31", "properties": {"Espacio verde": "FULTON", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.35875017262724, -37.28342218421062, -59.35875017262724, -37.28342218421062], "geometry": {"coordinates": [-59.35875017262724, -37.28342218421062], "type": "Point"}, "id": "32", "properties": {"Espacio verde": "DEL CENTENARIO", "__folium_color": "#00BB2D"}, "type": "Feature"}, {"bbox": [-59.105001788563435, -37.12733459602916, -59.105001788563435, -37.12733459602916], "geometry": {"coordinates": [-59.105001788563435, -37.12733459602916], "type": "Point"}, "id": "33", "properties": {"Espacio verde": "DE LA CANAL", "__folium_color": "#00BB2D"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_bb5e35c95334d20175eed11e6154ae50.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Espacio verde"];
+    let aliases = ["Espacio verde"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+</script>
+</html>
