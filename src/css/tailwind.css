@@ -32,10 +32,11 @@
   }
 
   .resources-card {
-    @apply relative p-4 rounded-lg cursor-pointer w-[300px];
+    @apply relative p-4 rounded-lg cursor-pointer w-[300px] hover:transition-all hover:scale-110;
   }
 
-  .resources-card-bg {
-    @apply absolute bottom-0 left-0 right-0 h-0 transition-all rounded-lg opacity-75 group-hover:h-full bg-accentCol bg-gradient-to-t from-mainCol to-accentCol;
-  }
+  /* .resources-card-bg {
+    @apply absolute bottom-0 left-0 right-0 h-0 transition-all rounded-lg opacity-75 bg-accentCol bg-gradient-to-b from-mainCol to-accentCol group-hover:h-full;
+  } */
+
 }
